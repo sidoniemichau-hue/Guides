@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Havre de paix éco · Badarel · Auvergne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --vert:    #2d5a3d;
+  --vert-cl: #4a8c60;
+  --vert-p:  #e8f0ea;
+  --terre:   #a85c2a;
+  --creme:   #f5f0e8;
+  --creme2:  #ede6d8;
+  --brun:    #2a1e0e;
+  --gris:    #6b6b6b;
+  --blanc:   #ffffff;
+  --or:      #c9a84c;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--creme);
+  color: var(--brun);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/17da0eb1-ac51-4b7b-a0bf-ef2a994784ab.jpeg?im_w=1440');
+  background-size: cover;
+  background-position: center 40%;
+  transform: scale(1.05);
+  animation: zoomout 8s ease forwards;
+}
+@keyframes zoomout { to { transform: scale(1); } }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,.05) 40%,
+    rgba(20,12,4,.75) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 60px 70px;
+  max-width: 900px;
+  opacity: 0;
+  animation: fadeup .9s .4s ease forwards;
+}
+@keyframes fadeup {
+  from { opacity:0; transform:translateY(24px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 300;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: #b8dfc6;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.pill {
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.3);
+  color: white;
+  font-size: .82rem;
+  padding: 6px 16px;
+  border-radius: 30px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--vert);
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 500;
+  padding: 14px 30px;
+  border-radius: 50px;
+  transition: background .25s, transform .2s;
+}
+.hero-cta:hover { background: var(--vert-cl); transform: translateY(-2px); }
+.hero-cta-sec {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 400;
+  padding: 14px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,.4);
+  margin-left: 12px;
+  transition: background .25s;
+}
+.hero-cta-sec:hover { background: rgba(255,255,255,.1); }
+
+/* ── NAV flottante ─────────────────────────────── */
+.floatnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 44px;
+  background: rgba(245,240,232,.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  transform: translateY(-100%);
+  transition: transform .35s ease;
+}
+.floatnav.visible { transform: translateY(0); }
+.floatnav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--vert);
+  text-decoration: none;
+}
+.floatnav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.floatnav-links a {
+  color: var(--brun);
+  text-decoration: none;
+  font-size: .82rem;
+  letter-spacing: .5px;
+  opacity: .75;
+  transition: opacity .2s, color .2s;
+}
+.floatnav-links a:hover { opacity:1; color:var(--vert); }
+.floatnav-cta {
+  background: var(--vert);
+  color: white !important;
+  opacity: 1 !important;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: .82rem !important;
+  transition: background .2s !important;
+}
+.floatnav-cta:hover { background: var(--vert-cl) !important; }
+
+/* ── MAIN ─────────────────────────────────────── */
+main { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+/* ── SECTION LABELS ────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--vert-cl);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* ── INTRO ─────────────────────────────────────── */
+.intro {
+  padding: 90px 0 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.intro-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 22px;
+  color: var(--brun);
+}
+.intro-text h2 em { font-style: italic; color: var(--vert); }
+.intro-text p {
+  font-size: .95rem;
+  color: var(--gris);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.intro-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--creme2);
+  border: 1px solid var(--creme2);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 36px;
+}
+.stat {
+  background: white;
+  padding: 22px 20px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--vert);
+  line-height: 1;
+}
+.stat-label { font-size: .78rem; color: var(--gris); margin-top: 4px; }
+
+.intro-img {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+.intro-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.intro-img:hover img { transform: scale(1.04); }
+.intro-img-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  font-size: .84rem;
+}
+.intro-img-badge .ico { font-size: 22px; }
+.intro-img-badge strong { display: block; font-size: .92rem; color: var(--brun); }
+.intro-img-badge span { color: var(--gris); font-size: .78rem; }
+
+/* ── GALERIE ───────────────────────────────────── */
+.galerie {
+  padding: 40px 0 80px;
+}
+.galerie h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.galerie-sub { font-size: .9rem; color: var(--gris); margin-bottom: 32px; }
+.galerie-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.galerie-item {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.galerie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+  display: block;
+}
+.galerie-item:hover img { transform: scale(1.06); }
+.galerie-item.main { grid-row: 1/3; }
+.galerie-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background .3s;
+}
+.galerie-item:hover::after { background: rgba(0,0,0,.08); }
+
+/* ── ÉQUIPEMENTS ───────────────────────────────── */
+.equipements {
+  padding: 80px 0;
+  background: var(--vert-p);
+  margin: 0 -28px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.equip-inner { max-width: 1100px; margin: 0 auto; }
+.equip-inner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.equip-inner .sub { font-size: .9rem; color: var(--gris); margin-bottom: 40px; }
+.equip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.equip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+.equip-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.equip-ico { font-size: 26px; flex-shrink: 0; margin-top: 1px; }
+.equip-title { font-size: .92rem; font-weight: 500; margin-bottom: 3px; color: var(--brun); }
+.equip-desc { font-size: .8rem; color: var(--gris); line-height: 1.55; }
+
+/* ── TARIFS ────────────────────────────────────── */
+.tarifs {
+  padding: 80px 0;
+}
+.tarifs h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.tarifs-sub { font-size: .9rem; color: var(--gris); margin-bottom: 40px; }
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.tarif-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: border-color .2s, transform .2s;
+}
+.tarif-card:hover { border-color: var(--vert-cl); transform: translateY(-3px); }
+.tarif-card.featured { border-color: var(--vert); background: var(--vert); color: white; }
+.tarif-ico { font-size: 28px; margin-bottom: 10px; }
+.tarif-prix {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--vert);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.tarif-card.featured .tarif-prix { color: white; }
+.tarif-label { font-size: .85rem; color: var(--gris); }
+.tarif-card.featured .tarif-label { color: rgba(255,255,255,.8); }
+.tarif-note {
+  font-size: .78rem;
+  color: var(--gris);
+  margin-top: 8px;
+  font-style: italic;
+}
+.tarif-card.featured .tarif-note { color: rgba(255,255,255,.65); }
+
+.regles {
+  background: var(--creme2);
+  border-radius: 16px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+.regle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .87rem;
+  color: var(--gris);
+}
+.regle .r-ico { font-size: 18px; }
+
+/* ── ACTIVITÉS ─────────────────────────────────── */
+.activites { padding: 80px 0; }
+.activites h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.activites-sub { font-size: .9rem; color: var(--gris); margin-bottom: 40px; }
+.act-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.act-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.act-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,.1); }
+.act-card-img {
+  height: 160px;
+  overflow: hidden;
+}
+.act-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+.act-card:hover .act-card-img img { transform: scale(1.07); }
+.act-card-body { padding: 16px 18px 20px; }
+.act-dist {
+  display: inline-block;
+  background: var(--vert-p);
+  color: var(--vert);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 7px;
+}
+.act-card-body h3 { font-size: .95rem; font-weight: 500; margin-bottom: 5px; color: var(--brun); }
+.act-card-body p { font-size: .82rem; color: var(--gris); line-height: 1.55; }
+
+/* ── SECTION HÔTE ──────────────────────────────── */
+.hote {
+  padding: 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  align-items: center;
+  border-top: 1px solid var(--creme2);
+}
+.hote-img {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+}
+.hote-img img { width: 100%; height: 100%; object-fit: cover; }
+.hote-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.hote-text h2 em { font-style: italic; color: var(--vert); }
+.hote-text p { font-size: .95rem; color: var(--gris); line-height: 1.85; margin-bottom: 16px; }
+.hote-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--vert);
+  border-left: 3px solid var(--vert-cl);
+  padding-left: 20px;
+  margin: 28px 0;
+  line-height: 1.5;
+}
+.contact-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn-vert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--vert);
+  color: white;
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: background .2s, transform .2s;
+}
+.btn-vert:hover { background: var(--vert-cl); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--vert);
+  text-decoration: none;
+  font-size: .88rem;
+  font-weight: 500;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid var(--vert);
+  transition: all .2s;
+}
+.btn-outline:hover { background: var(--vert); color: white; }
+
+/* ── CTA FINAL ─────────────────────────────────── */
+.cta-final {
+  margin: 0 -28px;
+  background: var(--vert);
+  padding: 80px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.cta-final h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: white;
+  margin-bottom: 14px;
+  position: relative;
+}
+.cta-final h2 em { font-style: italic; color: #b8dfc6; }
+.cta-final p {
+  font-size: 1rem;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 34px;
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-final a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--vert);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+  padding: 16px 36px;
+  border-radius: 50px;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,.2);
+}
+.cta-final a:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.25); }
+
+/* ── FOOTER ────────────────────────────────────── */
+footer {
+  background: var(--brun);
+  color: rgba(255,255,255,.55);
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: .82rem;
+}
+footer strong { color: white; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: rgba(255,255,255,.55); text-decoration: none; }
+.footer-links a:hover { color: white; }
+
+/* ── LIGHTBOX ──────────────────────────────────── */
+.lb { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; align-items:center; justify-content:center; cursor:pointer; }
+.lb.open { display:flex; }
+.lb img { max-width:90vw; max-height:88vh; object-fit:contain; border-radius:6px; cursor:default; }
+.lb-close { position:absolute; top:16px; right:22px; color:white; font-size:2rem; cursor:pointer; opacity:.7; }
+.lb-close:hover { opacity:1; }
+
+/* ── RESPONSIVE ────────────────────────────────── */
+@media(max-width:900px){
+  .hero-content { padding: 0 28px 50px; }
+  .intro { grid-template-columns: 1fr; gap: 40px; }
+  .intro-img { aspect-ratio: 16/9; }
+  .galerie-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .galerie-item.main { grid-row: auto; grid-column: 1/3; height: 260px; }
+  .hote { grid-template-columns: 1fr; gap: 40px; }
+  .hote-img { max-width: 280px; margin: 0 auto; }
+  .floatnav { padding: 12px 20px; }
+  .floatnav-links { display: none; }
+  .cta-final { padding: 60px 28px; }
+  footer { flex-direction: column; text-align: center; padding: 32px 28px; }
+  .hero-cta-sec { display: none; }
+}
+@media(max-width:600px){
+  .galerie-grid { grid-template-columns: 1fr; }
+  .galerie-item.main { grid-column: 1; }
+  .intro-stats { grid-template-columns: repeat(3,1fr); }
+  main { padding: 0 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV FLOTTANTE -->
+<nav class="floatnav" id="floatnav">
+  <a class="floatnav-logo" href="#">🌿 Badarel · Auvergne</a>
+  <ul class="floatnav-links">
+    <li><a href="#logement">Le logement</a></li>
+    <li><a href="#galerie">Photos</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#activites">Activités</a></li>
+    <li><a href="#hote">L'hôte</a></li>
+    <li><a href="https://www.airbnb.fr/rooms/1102881159738698326" target="_blank" class="floatnav-cta">Réserver →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 Hameau de Badarel · Auvergne</div>
+    <h1>Havre de paix<br><em>écorénovée</em></h1>
+    <p class="hero-sub">Maison de 90 m² au cœur de la nature auvergnate · Terrasse · Poêle à bois · Lac à 5 min</p>
+    <div class="hero-pills">
+      <span class="pill">🏠 90 m² · 3 chambres</span>
+      <span class="pill">👨‍👩‍👧 Jusqu'à 6 personnes</span>
+      <span class="pill">🌿 Matériaux biosourcés</span>
+      <span class="pill">🏊 Lac à 5 min</span>
+      <span class="pill">🌋 Volcans à 45 min</span>
+    </div>
+    <div>
+      <a class="hero-cta" href="https://www.airbnb.fr/rooms/1102881159738698326" target="_blank">Réserver sur Airbnb →</a>
+      <a class="hero-cta-sec" href="#logement">Découvrir ↓</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- INTRO -->
+  <section class="intro" id="logement">
+    <div class="intro-text">
+      <div class="section-label">Le logement</div>
+      <h2>Un coin de <em>nature</em><br>qui fait du bien</h2>
+      <p>Nichée dans le hameau paisible de Badarel, à quelques kilomètres de Bansat, cette maison écorénovée avec des matériaux sains (enduits chaux, terre, phytoépuration) vous accueille dans un cadre authentique et ressourçant.</p>
+      <p>Double terrasse Est et Ouest pour profiter du soleil toute la journée, poêle à bois pour les soirées fraîches, et la nature auvergnate à portée de pas.</p>
+      <div class="intro-stats">
+        <div class="stat"><div class="stat-num">90</div><div class="stat-label">m² habitables</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">chambres</div></div>
+        <div class="stat"><div class="stat-num">6</div><div class="stat-label">personnes max</div></div>
+      </div>
+    </div>
+    <div class="intro-img" onclick="openLB(this.querySelector('img').src)">
+      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/585e5f27-5a3d-4acc-b3b0-be7a4e0b1b62.jpeg?im_w=720" alt="Salon avec poêle à bois – Badarel">
+      <div class="intro-img-badge">
+        <span class="ico">🔥</span>
+        <div>
+          <strong>Poêle à bois</strong>
+          <span>Bois fourni · Ambiance garantie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="galerie" id="galerie">
+    <div class="section-label">Galerie photos</div>
+    <h2>La maison en images</h2>
+    <p class="galerie-sub">Cliquez sur une photo pour l'agrandir</p>
+    <div class="galerie-grid">
+      <div class="galerie-item main" onclick="openLB(this.querySelector('img').src)">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/17da0eb1-ac51-4b7b-a0bf-ef2a994784ab.jpeg?im_w=1440" alt="Terrasse teck – Badarel">
+      </div>
+      <div class="galerie-item" onclick="openLB(this.querySelector('img').src)">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/1a128848-0cb9-4ae0-a52c-5780af7f78b3.jpeg?im_w=720" alt="Chambre – Badarel">
+      </div>
+      <div class="galerie-item" onclick="openLB(this.querySelector('img').src)">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/141d1607-613b-471b-ae7b-ad96c81d14fa.jpeg?im_w=720" alt="Intérieur – Badarel">
+      </div>
+      <div class="galerie-item" onclick="openLB(this.querySelector('img').src)">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-1102881159738698326/original/bd0b0bc5-90d3-4eb1-bf13-616f17d81b3d.jpeg?im_w=720" alt="Chambre 1 – Badarel">
+      </div>
+      <div class="galerie-item" onclick="openLB(this.querySelector('img').src)">
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/b030a6d6-540b-4e81-b28f-7ecc0058bc76.jpeg?im_w=720" alt="Vue extérieure – Badarel">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ÉQUIPEMENTS -->
+<section class="equipements" id="equipements">
+  <div class="equip-inner">
+    <div class="section-label">Ce qui vous attend</div>
+    <h2>Équipements &amp; Confort</h2>
+    <p class="sub">Tout le nécessaire pour un séjour serein et confortable</p>
+    <div class="equip-grid">
+      <div class="equip-card"><span class="equip-ico">🔥</span><div><div class="equip-title">Poêle à bois</div><div class="equip-desc">Bois fourni · Allume-feux disponibles · Chauffage principal au RDC</div></div></div>
+      <div class="equip-card"><span class="equip-ico">❄️</span><div><div class="equip-title">PAC réversible</div><div class="equip-desc">Chauffage et climatisation · Télécommande au salon</div></div></div>
+      <div class="equip-card"><span class="equip-ico">🍳</span><div><div class="equip-title">Cuisine équipée</div><div class="equip-desc">Plaques induction · Four · Micro-ondes · Lave-vaisselle</div></div></div>
+      <div class="equip-card"><span class="equip-ico">📺</span><div><div class="equip-title">TV connectée</div><div class="equip-desc">TF1+ · 6play · Molotov TV · Netflix (profils Invité &amp; Jeunesse)</div></div></div>
+      <div class="equip-card"><span class="equip-ico">📶</span><div><div class="equip-title">WiFi inclus</div><div class="equip-desc">Réseau disponible dans toute la maison</div></div></div>
+      <div class="equip-card"><span class="equip-ico">🌿</span><div><div class="equip-title">Terrasse double</div><div class="equip-desc">Exposition Est &amp; Ouest · Salon de jardin · Soleil toute la journée</div></div></div>
+      <div class="equip-card"><span class="equip-ico">🚗</span><div><div class="equip-title">Parking gratuit</div><div class="equip-desc">Sur place · Plusieurs emplacements disponibles</div></div></div>
+      <div class="equip-card"><span class="equip-ico">🥩</span><div><div class="equip-title">Plancha &amp; mini-crêpes</div><div class="equip-desc">Dans le placard du salon · À votre disposition</div></div></div>
+      <div class="equip-card"><span class="equip-ico">📚</span><div><div class="equip-title">Bibliothèque &amp; jeux</div><div class="equip-desc">Jeux de société · BD · Livres · Dépliants sur la région</div></div></div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- TARIFS -->
+  <section class="tarifs" id="tarifs">
+    <div class="section-label">Transparence totale</div>
+    <h2>Tarifs &amp; Conditions</h2>
+    <p class="tarifs-sub">Tout ce qu'il faut savoir avant de réserver</p>
+    <div class="tarifs-grid">
+      <div class="tarif-card featured">
+        <div class="tarif-ico">🧹</div>
+        <div class="tarif-prix">70€</div>
+        <div class="tarif-label">Forfait ménage</div>
+        <div class="tarif-note">Obligatoire · inclus dans la réservation Airbnb</div>
+      </div>
+      <div class="tarif-card">
+        <div class="tarif-ico">🛁</div>
+        <div class="tarif-prix">20€</div>
+        <div class="tarif-label">Draps &amp; taies · par chambre</div>
+        <div class="tarif-note">En option · sur demande</div>
+      </div>
+      <div class="tarif-card">
+        <div class="tarif-ico">🪥</div>
+        <div class="tarif-prix">5€</div>
+        <div class="tarif-label">Serviette de bain · par personne</div>
+        <div class="tarif-note">En option · 1 grande + 1 petite</div>
+      </div>
+    </div>
+    <div class="regles">
+      <div class="regle"><span class="r-ico">🕐</span>Arrivée à partir de 16h00</div>
+      <div class="regle"><span class="r-ico">🕚</span>Départ avant 11h00</div>
+      <div class="regle"><span class="r-ico">🚫</span>Animaux non acceptés</div>
+      <div class="regle"><span class="r-ico">🚭</span>Non-fumeurs</div>
+      <div class="regle"><span class="r-ico">👨‍👩‍👧</span>6 personnes maximum</div>
+    </div>
+  </section>
+
+  <!-- ACTIVITÉS -->
+  <section class="activites" id="activites">
+    <div class="section-label">Aux alentours</div>
+    <h2>Activités &amp; Découvertes</h2>
+    <p class="activites-sub">Un cadre idéal pour explorer l'Auvergne profonde</p>
+    <div class="act-grid">
+      <div class="act-card">
+        <div class="act-card-img"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1102881159738698326/original/b030a6d6-540b-4e81-b28f-7ecc0058bc76.jpeg?im_w=720" alt="Plan d'eau"></div>
+        <div class="act-card-body">
+          <span class="act-dist">⭐ 5 min</span>
+          <h3>Plan d'eau · Vernet-la-Varenne</h3>
+          <p>Baignade surveillée (juil–août), pédalo, accrobranche, tennis. Le seul plan d'eau du Pays d'Issoire.</p>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-card-img" style="background:var(--vert-p);display:flex;align-items:center;justify-content:center;font-size:3rem">🥾</div>
+        <div class="act-card-body">
+          <span class="act-dist">Départ maison</span>
+          <h3>Randonnées · PNR Livradois-Forez</h3>
+          <p>+600 km de sentiers balisés. Boucle de la Ribeyre au départ de la maison. Tous niveaux.</p>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-card-img" style="background:#fff3e0;display:flex;align-items:center;justify-content:center;font-size:3rem">🦁</div>
+        <div class="act-card-body">
+          <span class="act-dist">30 min</span>
+          <h3>Parc Animalier d'Auvergne</h3>
+          <p>350 animaux · 65 espèces menacées · Girafes, lions, pandas roux. Ardes-sur-Couze.</p>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-card-img" style="background:#fce4ec;display:flex;align-items:center;justify-content:center;font-size:3rem">🌋</div>
+        <div class="act-card-body">
+          <span class="act-dist">45–50 min</span>
+          <h3>Puy de Dôme · Puy de Sancy</h3>
+          <p>Les sommets emblématiques d'Auvergne. Paysages volcaniques classés UNESCO. Vulcania à 45 min.</p>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-card-img" style="background:var(--creme2);display:flex;align-items:center;justify-content:center;font-size:3rem">🏰</div>
+        <div class="act-card-body">
+          <span class="act-dist">8–20 min</span>
+          <h3>Villages médiévaux</h3>
+          <p>Sauxillanges (8 km), Issoire (20 min), Usson et Montpeyroux (Plus Beaux Villages de France).</p>
+        </div>
+      </div>
+      <div class="act-card">
+        <div class="act-card-img" style="background:#e8f5e9;display:flex;align-items:center;justify-content:center;font-size:3rem">🧀</div>
+        <div class="act-card-body">
+          <span class="act-dist">30 min</span>
+          <h3>Saint-Nectaire &amp; Fromages AOP</h3>
+          <p>Visites de caves d'affinage, dégustation de fromages fermiers. Église romane remarquable.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a class="btn-outline" href="https://badarel-auvergne.github.io/Guides/guide_activites_badarel.html" target="_blank">→ Voir le guide complet des activités</a>
+    </div>
+  </section>
+
+  <!-- HÔTE -->
+  <section class="hote" id="hote">
+    <div class="hote-img">
+      <img src="https://a0.muscache.com/im/pictures/user/User/original/9f605a51-0e55-4af8-be87-c73bf73c2642.jpeg?im_w=720" alt="Sidonie – votre hôte">
+    </div>
+    <div class="hote-text">
+      <div class="section-label">Votre hôte</div>
+      <h2>Bonjour, je suis <em>Sidonie</em></h2>
+      <p>Hôte depuis 4 ans, je vis à deux pas de la maison — votre voisine directe ! Je connais la région sur le bout des doigts et suis disponible pour vous conseiller sur les meilleures randonnées, les adresses locales et les bons plans du coin.</p>
+      <blockquote class="hote-quote">"J'ai mis beaucoup de soin et d'amour dans la rénovation éco-responsable de cette maison. Traitez-la bien et elle vous le rendra !"</blockquote>
+      <p>Note globale <strong>5,0 ⭐</strong> · Hôte expérimenté avec 5 évaluations</p>
+      <div class="contact-btns">
+        <a class="btn-vert" href="https://www.airbnb.fr/rooms/1102881159738698326" target="_blank">Réserver sur Airbnb →</a>
+        <a class="btn-outline" href="https://badarel-auvergne.github.io/Guides/livret_accueil_badarel.html" target="_blank">📖 Livret d'accueil</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <h2>Prêt à vous ressourcer<br>au cœur de l'<em>Auvergne</em> ?</h2>
+  <p>Vérifiez les disponibilités et réservez directement sur Airbnb en quelques clics.</p>
+  <a href="https://www.airbnb.fr/rooms/1102881159738698326" target="_blank">🗓 Vérifier les disponibilités</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong>Havre de paix écorénovée · Hameau de Badarel · 63570 Bansat · Auvergne</strong><br>
+    Sidonie · Votre hôte &amp; voisine directe 🌿
+  </div>
+  <div class="footer-links">
+    <a href="https://badarel-auvergne.github.io/Guides/livret_accueil_badarel.html" target="_blank">Livret d'accueil</a>
+    <a href="https://badarel-auvergne.github.io/Guides/guide_activites_badarel.html" target="_blank">Guide activités</a>
+    <a href="https://www.airbnb.fr/rooms/1102881159738698326" target="_blank">Annonce Airbnb</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="closeLB()">
+  <span class="lb-close" onclick="closeLB()">✕</span>
+  <img id="lb-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  // Lightbox
+  function openLB(src){ document.getElementById('lb-img').src=src; document.getElementById('lb').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLB(){ document.getElementById('lb').classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); });
+
+  // Nav flottante
+  const nav = document.getElementById('floatnav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('visible', window.scrollY > window.innerHeight * 0.6);
+  });
+</script>
+
+</body>
+</html>
