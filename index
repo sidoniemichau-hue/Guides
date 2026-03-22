@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenue à Badarel · Auvergne</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#f7f3ec; font-family:'Lato',sans-serif; font-weight:300; color:#2e2018; min-height:100vh; display:flex; flex-direction:column; }
+
+  .hero {
+    position:relative; height:380px; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero img {
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center 55%;
+  }
+  .hero::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.65));
+  }
+  .hero-text {
+    position:relative; z-index:2; text-align:center; color:white; padding:24px;
+  }
+  .hero-badge {
+    display:inline-block; background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.4); font-size:11px;
+    letter-spacing:3px; text-transform:uppercase; padding:5px 16px;
+    border-radius:20px; margin-bottom:14px;
+  }
+  .hero h1 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,5vw,3.2rem); font-weight:700; line-height:1.2;
+    margin-bottom:10px;
+  }
+  .hero h1 em { font-style:italic; color:#b8dfc6; }
+  .hero p { font-size:1rem; opacity:.88; }
+
+  main {
+    max-width:700px; margin:0 auto; padding:52px 22px 60px;
+    flex:1; width:100%;
+  }
+
+  h2 {
+    font-family:'Playfair Display',serif; font-size:1.4rem;
+    color:#3a6b4d; text-align:center; margin-bottom:32px;
+    font-weight:400; font-style:italic;
+  }
+
+  .cards { display:grid; gap:18px; }
+
+  .card {
+    background:white; border-radius:16px;
+    box-shadow:0 2px 16px rgba(0,0,0,.08);
+    text-decoration:none; color:inherit;
+    display:flex; align-items:center; gap:20px;
+    padding:22px 24px;
+    transition:transform .2s, box-shadow .2s;
+    border-left:5px solid #3a6b4d;
+  }
+  .card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 28px rgba(0,0,0,.13);
+  }
+  .card.orange { border-left-color:#bf6e3a; }
+  .card.blue   { border-left-color:#4a7fa5; }
+
+  .card-ico {
+    font-size:2.4rem; flex-shrink:0; line-height:1;
+  }
+  .card-title {
+    font-family:'Playfair Display',serif;
+    font-size:1.15rem; font-weight:700; margin-bottom:4px;
+    color:#2e2018;
+  }
+  .card-desc { font-size:.87rem; color:#777; line-height:1.55; }
+  .card-arrow {
+    margin-left:auto; font-size:1.3rem; color:#3a6b4d;
+    flex-shrink:0; opacity:.6;
+  }
+  .card.orange .card-arrow { color:#bf6e3a; }
+  .card.blue   .card-arrow { color:#4a7fa5; }
+
+  footer {
+    background:#2e2018; color:rgba(255,255,255,.55);
+    text-align:center; padding:24px; font-size:.82rem;
+  }
+  footer strong { color:white; }
+
+  @media(max-width:500px){
+    .hero { height:280px; }
+    .card { padding:18px; gap:14px; }
+    .card-ico { font-size:2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="hero_terrasse.jpg" alt="Terrasse teck – Badarel, Bansat">
+  <div class="hero-text">
+    <div class="hero-badge">🌿 Hameau de Badarel · Bansat</div>
+    <h1>Bienvenue dans<br>ma <em>maison</em> !</h1>
+    <p>12 lieu-dit Badarel · 63570 Bansat · Auvergne</p>
+  </div>
+</div>
+
+<main>
+  <h2>Choisissez votre document</h2>
+
+  <div class="cards">
+
+    <a class="card" href="livret_accueil_badarel.html">
+      <span class="card-ico">🏠</span>
+      <div>
+        <div class="card-title">Livret d'accueil</div>
+        <div class="card-desc">WiFi, équipements, poêle à bois, éco-gestes, départ… Tout ce qu'il faut savoir pour votre séjour à Badarel.</div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card orange" href="guide_activites_badarel.html">
+      <span class="card-ico">🥾</span>
+      <div>
+        <div class="card-title">Guide des activités</div>
+        <div class="card-desc">Randonnées, plan d'eau, parc animalier, villages, marchés, bonnes tables, festivités… Le meilleur de la région.</div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card blue" href="livret_accessible_badarel.html">
+      <span class="card-ico">👁</span>
+      <div>
+        <div class="card-title">Livret accessible</div>
+        <div class="card-desc">Version grande police et fort contraste — conçue pour les personnes malvoyantes ou dyslexiques.</div>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <strong>Havre de paix écorénovée · Hameau de Badarel · 63570 Bansat · Auvergne</strong><br>
+  Sidonie · 06 64 51 32 45 · Votre voisine directe 🌿
+</footer>
+
+</body>
+</html>
