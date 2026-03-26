@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Guides/livret_accessible_badarel.html
+
+Sitemap: https://badarel-auvergne.github.io/sitemap.xml
