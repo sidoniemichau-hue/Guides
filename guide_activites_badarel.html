@@ -9,8 +9,6 @@
 <meta name="author" content="Sidonie – Gîte de Badarel">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://badarel-auvergne.github.io/Guides/guide_activites_badarel.html">
-
-<!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://badarel-auvergne.github.io/Guides/guide_activites_badarel.html">
 <meta property="og:title" content="Guide des activités autour de Badarel – Auvergne">
@@ -18,24 +16,6 @@
 <meta property="og:image" content="https://badarel-auvergne.github.io/exterieur_terrasse.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Gîte de Badarel – Auvergne">
-
-<!-- Schema.org – TouristAttraction guide -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristDestination",
-  "name": "Pays d'Issoire – Activités autour du gîte de Badarel",
-  "description": "Guide des activités autour du hameau de Badarel, Bansat (Puy-de-Dôme) : lac du Vernet, randonnées Livradois-Forez, Parc Animalier d'Auvergne, Puy de Dôme, Puy de Sancy, villages médiévaux, fromages AOP Saint-Nectaire.",
-  "url": "https://badarel-auvergne.github.io/Guides/guide_activites_badarel.html",
-  "touristType": ["Famille", "Randonneurs", "Nature", "Patrimoine"],
-  "includesAttraction": [
-    {"@type": "TouristAttraction", "name": "Plan d'eau de Vernet-la-Varenne", "description": "Baignade surveillée, pédalo, accrobranche, tennis. À 5 minutes de Badarel."},
-    {"@type": "TouristAttraction", "name": "Parc Animalier d'Auvergne", "description": "350 animaux, 65 espèces menacées. À 30 minutes de Badarel."},
-    {"@type": "TouristAttraction", "name": "Puy de Dôme", "description": "Sommet volcanique classé UNESCO à 45 min de Badarel."},
-    {"@type": "TouristAttraction", "name": "Sauxillanges", "description": "Site clunisien médiéval à 8 km de Badarel."}
-  ]
-}
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -49,6 +29,12 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { background:var(--creme); color:var(--brun); font-family:'Nunito',sans-serif; font-weight:400; line-height:1.7; }
+
+  /* LANGUAGE SWITCHER */
+  .lang-switcher{position:fixed;top:16px;right:20px;z-index:9999;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,.1);border-radius:30px;padding:4px 5px;box-shadow:0 2px 12px rgba(0,0,0,.12);}
+  .lang-btn{display:flex;align-items:center;gap:5px;padding:5px 12px;border-radius:20px;border:none;background:transparent;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.78rem;font-weight:700;color:#6b6b6b;transition:all .2s;letter-spacing:.3px;}
+  .lang-btn.active{background:#3a6b4d;color:white;}
+  .lang-btn:hover:not(.active){background:#f0f7f3;color:#3a6b4d;}
 
   /* HERO */
   .hero { position:relative; height:460px; overflow:hidden; display:flex; align-items:flex-end; }
@@ -78,7 +64,7 @@
   .sec-title-w { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:white; text-shadow:0 1px 4px rgba(0,0,0,.5); }
   .sec-sub-w { font-size:.85rem; color:rgba(255,255,255,.85); margin-top:1px; text-shadow:0 1px 3px rgba(0,0,0,.4); }
 
-  /* SECTION HEAD sans bannière */
+  /* SECTION HEAD */
   .sec-head { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:12px; border-bottom:3px solid var(--vert-cl); }
   .sec-icon { width:48px; height:48px; background:var(--vert); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; }
   .sec-title { font-family:'Playfair Display',serif; font-size:1.65rem; font-weight:700; color:var(--vert); }
@@ -87,7 +73,6 @@
   /* CARDS */
   .cards { display:grid; gap:16px; }
   .cards.two { grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); }
-
   .card { background:white; border-radius:13px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,.07); transition:transform .2s,box-shadow .2s; cursor:pointer; }
   .card:hover { transform:translateY(-3px); box-shadow:0 7px 22px rgba(0,0,0,.12); }
   .card > img { width:100%; height:180px; object-fit:cover; display:block; }
@@ -122,9 +107,6 @@
   .ri-title { font-size:.93rem; font-weight:700; }
   .ri-sub { font-size:.8rem; color:var(--gris); margin-top:1px; }
   .ri-warn { font-size:.77rem; color:var(--terre); font-weight:700; margin-top:3px; }
-  .ri-stats { text-align:right; flex-shrink:0; min-width:76px; }
-  .ri-km { font-size:1rem; font-weight:700; color:var(--vert); }
-  .ri-deni { font-size:.75rem; color:var(--gris); }
 
   /* FESTI */
   .festi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
@@ -162,35 +144,45 @@
     .hero { height:320px; } .hero-text { padding:22px 18px; }
     main { padding:28px 14px 56px; }
     .sec-title-w { font-size:1.2rem; }
-    .rando-item { grid-template-columns:42px 1fr; } .ri-stats { display:none; }
     .quick-nav a { padding:10px 10px; font-size:.73rem; }
     .card-horiz { flex-direction:column; } .card-horiz > img { width:100%; height:170px; }
     .resto-grid { grid-template-columns:1fr 1fr; }
+    .lang-switcher { top:12px; right:12px; }
   }
 </style>
 </head>
 <body>
 
+<!-- LANGUAGE SWITCHER -->
+<div class="lang-switcher">
+  <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">
+    <span>🇫🇷</span> FR
+  </button>
+  <button class="lang-btn" id="btnEN" onclick="setLang('en')">
+    <span>🇬🇧</span> EN
+  </button>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <img src="terrasse_vue.jpg" alt="Terrasse avec vue sur les montagnes – Badarel, Bansat">
   <div class="hero-text">
-    <div class="hero-badge">🌿 Guide du séjour · 2026</div>
-    <h1>Bienvenue au hameau de <em>Badarel</em><br>en Auvergne</h1>
-    <p>Votre base idéale pour familles et randonneurs · Pays d'Issoire · PNR Livradois-Forez · Volcans d'Auvergne</p>
+    <div class="hero-badge t" data-key="hero_badge">🌿 Guide du séjour · 2026</div>
+    <h1 class="t" data-key="hero_title">Bienvenue au hameau de <em>Badarel</em><br>en Auvergne</h1>
+    <p class="t" data-key="hero_sub">Votre base idéale pour familles et randonneurs · Pays d'Issoire · PNR Livradois-Forez · Volcans d'Auvergne</p>
   </div>
 </div>
 
 <nav class="quick-nav">
-  <a href="#lac">🏊 Lac</a>
-  <a href="#rando">🥾 Randos</a>
-  <a href="#famille">👨‍👩‍👧 Familles</a>
-  <a href="#patrimoine">🏰 Patrimoine</a>
-  <a href="#marches">🛒 Marchés</a>
-  <a href="#tables">🍽 Bonnes tables</a>
-  <a href="#festi">🎶 Festivités</a>
-  <a href="#volcans">🌋 Volcans</a>
-  <a href="#pratique">ℹ️ Pratique</a>
+  <a href="#lac" class="t" data-key="nav_lac">🏊 Lac</a>
+  <a href="#rando" class="t" data-key="nav_rando">🥾 Randos</a>
+  <a href="#famille" class="t" data-key="nav_famille">👨‍👩‍👧 Familles</a>
+  <a href="#patrimoine" class="t" data-key="nav_patrimoine">🏰 Patrimoine</a>
+  <a href="#marches" class="t" data-key="nav_marches">🛒 Marchés</a>
+  <a href="#tables" class="t" data-key="nav_tables">🍽 Bonnes tables</a>
+  <a href="#festi" class="t" data-key="nav_festi">🎶 Festivités</a>
+  <a href="#volcans" class="t" data-key="nav_volcans">🌋 Volcans</a>
+  <a href="#pratique" class="t" data-key="nav_pratique">ℹ️ Pratique</a>
 </nav>
 
 <main>
@@ -200,8 +192,8 @@
     <div class="sec-head">
       <div class="sec-icon">🏊</div>
       <div>
-        <div class="sec-title">Le Plan d'Eau du Vernet</div>
-        <div class="sec-sub">À 5 minutes en voiture depuis le hameau de Badarel</div>
+        <div class="sec-title t" data-key="lac_title">Le Plan d'Eau du Vernet</div>
+        <div class="sec-sub t" data-key="lac_sub">À 5 minutes en voiture depuis le hameau de Badarel</div>
       </div>
     </div>
     <div class="cards two">
@@ -209,30 +201,19 @@
       <div class="card star" onclick="openLB('plan_deau.jpg','Plan d\'eau de Vernet-la-Varenne')">
         <img src="plan_deau.jpg" alt="Baignade plan d'eau Vernet-la-Varenne">
         <div class="card-body">
-          <span class="card-dist">⭐ Incontournable</span>
-          <h3>Baignade &amp; Loisirs · Vernet-la-Varenne</h3>
-          <p>Seul plan d'eau de baignade surveillée du Pays d'Issoire. 3 hectares de nature préservée au cœur du PNR Livradois-Forez. Idéal pour toute la famille !</p>
-          <p class="detail">
-            🏖 Baignade surveillée en juillet–août<br>
-            🚣 Pédalo · Paddle · Stand-up paddle<br>
-            🌲 Accrobranche · Pêche · Aire de jeux<br>
-            🎾 Tennis · Pétanque · Volleyball<br>
-            🍔 Bar &amp; restauration · 🆓 Accès libre toute l'année
-          </p>
+          <span class="card-dist t" data-key="lac_dist1">⭐ Incontournable</span>
+          <h3 class="t" data-key="lac_h1">Baignade &amp; Loisirs · Vernet-la-Varenne</h3>
+          <p class="t" data-key="lac_p1">Seul plan d'eau de baignade surveillée du Pays d'Issoire. 3 hectares de nature préservée au cœur du PNR Livradois-Forez. Idéal pour toute la famille !</p>
+          <p class="detail t" data-key="lac_detail1">🏖 Baignade surveillée en juillet–août<br>🚣 Pédalo · Paddle · Stand-up paddle<br>🌲 Accrobranche · Pêche · Aire de jeux<br>🎾 Tennis · Pétanque · Volleyball<br>🍔 Bar &amp; restauration · 🆓 Accès libre toute l'année</p>
         </div>
       </div>
 
       <div class="card" onclick="openLB('musee_amethyste.jpg','Musée de l\'Améthyste – Vernet-la-Varenne')">
         <img src="musee_amethyste.jpg" alt="Musée de l'Améthyste Vernet-la-Varenne">
         <div class="card-body">
-          <h3>Musée de l'Améthyste &amp; ses animations</h3>
-          <p>Découvrez le principal gisement d'améthyste d'Europe ! Visite du musée, chasse aux cristaux sur le site, initiation au polissage et fabrication de bijoux à emporter en souvenir.</p>
-          <p class="detail">
-            🔮 Visite du musée et du gisement<br>
-            💎 Atelier taille et polissage des pierres<br>
-            🛍 Boutique : bijoux, cristaux, minéraux<br>
-            🎨 Animations en saison pour les enfants
-          </p>
+          <h3 class="t" data-key="lac_h2">Musée de l'Améthyste &amp; ses animations</h3>
+          <p class="t" data-key="lac_p2">Découvrez le principal gisement d'améthyste d'Europe ! Visite du musée, chasse aux cristaux sur le site, initiation au polissage et fabrication de bijoux à emporter en souvenir.</p>
+          <p class="detail t" data-key="lac_detail2">🔮 Visite du musée et du gisement<br>💎 Atelier taille et polissage des pierres<br>🛍 Boutique : bijoux, cristaux, minéraux<br>🎨 Animations en saison pour les enfants</p>
         </div>
       </div>
 
@@ -242,9 +223,9 @@
         <img src="accrobranche.jpg" alt="Accrobranche au bord du lac de Vernet-la-Varenne">
         <div class="card-body">
           <div>
-            <span class="card-dist">Juillet–Août</span>
-            <h3 style="margin-bottom:4px">Accrobranche au bord du lac</h3>
-            <p>Parcours dans les arbres pour petits et grands, directement au bord du plan d'eau. Accessible dès 3 ans !</p>
+            <span class="card-dist t" data-key="lac_dist3">Juillet–Août</span>
+            <h3 style="margin-bottom:4px" class="t" data-key="lac_h3">Accrobranche au bord du lac</h3>
+            <p class="t" data-key="lac_p3">Parcours dans les arbres pour petits et grands, directement au bord du plan d'eau. Accessible dès 3 ans !</p>
           </div>
         </div>
       </div>
@@ -258,64 +239,57 @@
       <div class="sec-banner-text">
         <div class="sec-icon-w">🥾</div>
         <div>
-          <div class="sec-title-w">Quelques idées de randonnées</div>
-          <div class="sec-sub-w">Nombreuses balades à proximité · PNR Livradois-Forez, Sancy, Puy de Dôme…</div>
+          <div class="sec-title-w t" data-key="rando_title">Quelques idées de randonnées</div>
+          <div class="sec-sub-w t" data-key="rando_sub">Nombreuses balades à proximité · PNR Livradois-Forez, Sancy, Puy de Dôme…</div>
         </div>
       </div>
     </div>
     <div class="rando-list">
-
       <div class="rando-item">
         <div class="badge bg-easy">🌿</div>
         <div>
-          <div class="ri-title">Boucle de la Ribeyre</div>
-          <div class="ri-sub">Départ de la maison · Sous-bois, ruisseau, tranquillité</div>
-          <div class="ri-warn">⚠️ Attention au dénivelé 😉</div>
+          <div class="ri-title t" data-key="rando_1_title">Boucle de la Ribeyre</div>
+          <div class="ri-sub t" data-key="rando_1_sub">Départ de la maison · Sous-bois, ruisseau, tranquillité</div>
+          <div class="ri-warn t" data-key="rando_1_warn">⚠️ Attention au dénivelé 😉</div>
         </div>
       </div>
-
       <div class="rando-item">
         <div class="badge bg-easy">🌿</div>
         <div>
-          <div class="ri-title">Vallée du Civadoux – Sauxillanges</div>
-          <div class="ri-sub">Bourg médiéval · Moulin ancien · Vue sur Sancy et Puys · Église romane Saint-Quentin</div>
+          <div class="ri-title t" data-key="rando_2_title">Vallée du Civadoux – Sauxillanges</div>
+          <div class="ri-sub t" data-key="rando_2_sub">Bourg médiéval · Moulin ancien · Vue sur Sancy et Puys · Église romane Saint-Quentin</div>
         </div>
       </div>
-
       <div class="rando-item">
         <div class="badge bg-easy">🌿</div>
         <div>
-          <div class="ri-title">Étang de Lospeux – Sauxillanges</div>
-          <div class="ri-sub">Pêche, pique-nique, hérons cendrés · Facile en famille</div>
+          <div class="ri-title t" data-key="rando_3_title">Étang de Lospeux – Sauxillanges</div>
+          <div class="ri-sub t" data-key="rando_3_sub">Pêche, pique-nique, hérons cendrés · Facile en famille</div>
         </div>
       </div>
-
       <div class="rando-item">
         <div class="badge bg-med">🌄</div>
         <div>
-          <div class="ri-title">Vallée des Saints · Boudes</div>
-          <div class="ri-sub">Vignes, orgues basaltiques, village médiéval perché</div>
+          <div class="ri-title t" data-key="rando_4_title">Vallée des Saints · Boudes</div>
+          <div class="ri-sub t" data-key="rando_4_sub">Vignes, orgues basaltiques, village médiéval perché</div>
         </div>
       </div>
-
       <div class="rando-item">
         <div class="badge bg-med">🌄</div>
         <div>
-          <div class="ri-title">Tour du Puy d'Usson</div>
-          <div class="ri-sub">Vue 360° sur le Lembron · Orgues basaltiques · Village de la Reine Margot</div>
+          <div class="ri-title t" data-key="rando_5_title">Tour du Puy d'Usson</div>
+          <div class="ri-sub t" data-key="rando_5_sub">Vue 360° sur le Lembron · Orgues basaltiques · Village de la Reine Margot</div>
         </div>
       </div>
-
       <div class="rando-item">
         <div class="badge bg-hard">🏔</div>
         <div>
-          <div class="ri-title">Vallée de la Chaudefour · Massif du Sancy</div>
-          <div class="ri-sub">Réserve naturelle nationale · Paysage volcanique spectaculaire · Flore protégée</div>
+          <div class="ri-title t" data-key="rando_6_title">Vallée de la Chaudefour · Massif du Sancy</div>
+          <div class="ri-sub t" data-key="rando_6_sub">Réserve naturelle nationale · Paysage volcanique spectaculaire · Flore protégée</div>
         </div>
       </div>
-
     </div>
-    <p style="margin-top:12px;font-size:.81rem;color:var(--gris)">
+    <p style="margin-top:12px;font-size:.81rem;color:var(--gris)" class="t" data-key="rando_gps">
       📱 Traces GPS sur <strong>Visorando</strong> et <strong>Komoot</strong> · Topos à la maison et à l'Office de Tourisme d'Issoire
     </p>
   </section>
@@ -325,57 +299,48 @@
     <div class="sec-head">
       <div class="sec-icon">👨‍👩‍👧</div>
       <div>
-        <div class="sec-title">Sorties Familles</div>
-        <div class="sec-sub">Des activités pour tous les âges</div>
+        <div class="sec-title t" data-key="fam_title">Sorties Familles</div>
+        <div class="sec-sub t" data-key="fam_sub">Des activités pour tous les âges</div>
       </div>
     </div>
     <div class="cards two">
-
       <div class="card star" onclick="openLB('parc_animalier_plan.jpg','Parc Animalier d\'Auvergne – Ardes-sur-Couze')">
         <img src="parc_animalier_plan.jpg" alt="Plan Parc Animalier d'Auvergne Ardes-sur-Couze">
         <div class="card-body">
-          <span class="card-dist">⭐ Incontournable · 40 min</span>
-          <h3>Parc Animalier d'Auvergne · Ardes-sur-Couze</h3>
-          <p>350 animaux de 65 espèces menacées sur 50 ha. Girafes, lions, pandas roux, panthères des neiges, lémuriens… Entièrement dédié aux espèces en danger.</p>
-          <p class="detail">
-            🗓 Ouvert février–décembre · Jours fériés inclus<br>
-            🎟 Adulte : 24,50€–28,50€ · Enfant 3-9 ans : 17,50€–21,50€<br>
-            👶 -3 ans gratuit · 💡 -3€/billet réservé 3j avant
-          </p>
-          <a class="btn" href="https://www.parcanimalierdauvergne.fr" target="_blank" onclick="event.stopPropagation()">→ Site officiel</a>
+          <span class="card-dist t" data-key="fam_dist1">⭐ Incontournable · 40 min</span>
+          <h3 class="t" data-key="fam_h1">Parc Animalier d'Auvergne · Ardes-sur-Couze</h3>
+          <p class="t" data-key="fam_p1">350 animaux de 65 espèces menacées sur 50 ha. Girafes, lions, pandas roux, panthères des neiges, lémuriens… Entièrement dédié aux espèces en danger.</p>
+          <p class="detail t" data-key="fam_detail1">🗓 Ouvert février–décembre · Jours fériés inclus<br>🎟 Adulte : 24,50€–28,50€ · Enfant 3-9 ans : 17,50€–21,50€<br>👶 -3 ans gratuit · 💡 -3€/billet réservé 3j avant</p>
+          <a class="btn t" href="https://www.parcanimalierdauvergne.fr" target="_blank" onclick="event.stopPropagation()" data-key="fam_btn1">→ Site officiel</a>
         </div>
       </div>
-
       <div class="card" onclick="openLB('grotte_perrier.jpg','Grottes de Perrier – village troglodytique')">
         <img src="grotte_perrier.jpg" alt="Grottes de Perrier village troglodytique">
         <div class="card-body">
-          <span class="card-dist">30 min</span>
-          <h3>Grottes de Perrier</h3>
-          <p>Ancien village troglodytique en accès libre, creusé dans la falaise de pouzzolane. Balade d'une heure dans un cadre insolite, parfaite pour les enfants curieux.</p>
-          <p class="detail">🆓 Accès libre · ~1h · Facile · Toute l'année</p>
+          <span class="card-dist t" data-key="fam_dist2">30 min</span>
+          <h3 class="t" data-key="fam_h2">Grottes de Perrier</h3>
+          <p class="t" data-key="fam_p2">Ancien village troglodytique en accès libre, creusé dans la falaise de pouzzolane. Balade d'une heure dans un cadre insolite, parfaite pour les enfants curieux.</p>
+          <p class="detail t" data-key="fam_detail2">🆓 Accès libre · ~1h · Facile · Toute l'année</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('aqualudique.jpg','Centre aqualudique d\'Issoire')">
         <img src="aqualudique.jpg" alt="Centre aqualudique Issoire">
         <div class="card-body">
-          <span class="card-dist">20 min · Issoire</span>
-          <h3>Centre Aqualudique</h3>
-          <p>Toboggans, bassins intérieurs et extérieurs, pataugeoire. L'option idéale les jours de grande chaleur ou de pluie !</p>
-          <p class="detail">🌧 Idéal si mauvais temps · Ouvert toute l'année</p>
+          <span class="card-dist t" data-key="fam_dist3">20 min · Issoire</span>
+          <h3 class="t" data-key="fam_h3">Centre Aqualudique</h3>
+          <p class="t" data-key="fam_p3">Toboggans, bassins intérieurs et extérieurs, pataugeoire. L'option idéale les jours de grande chaleur ou de pluie !</p>
+          <p class="detail t" data-key="fam_detail3">🌧 Idéal si mauvais temps · Ouvert toute l'année</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('VULCANIA.jpg','Vulcania – Parc européen du volcanisme')">
         <img src="VULCANIA.jpg" alt="Vulcania parc du volcanisme Auvergne">
         <div class="card-body">
-          <span class="card-dist">1h15</span>
-          <h3>Vulcania</h3>
-          <p>Le grand parc européen du volcanisme. Manèges, films 4D, attractions spectaculaires autour des volcans. Incontournable avec des enfants.</p>
-          <p class="detail">🌋 Réservation conseillée en été · <a href="https://www.vulcania.com" target="_blank" style="color:var(--vert)" onclick="event.stopPropagation()">vulcania.com</a></p>
+          <span class="card-dist t" data-key="fam_dist4">1h15</span>
+          <h3 class="t" data-key="fam_h4">Vulcania</h3>
+          <p class="t" data-key="fam_p4">Le grand parc européen du volcanisme. Manèges, films 4D, attractions spectaculaires autour des volcans. Incontournable avec des enfants.</p>
+          <p class="detail t" data-key="fam_detail4">🌋 Réservation conseillée en été · <a href="https://www.vulcania.com" target="_blank" style="color:var(--vert)" onclick="event.stopPropagation()">vulcania.com</a></p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -384,95 +349,80 @@
     <div class="sec-head">
       <div class="sec-icon">🏰</div>
       <div>
-        <div class="sec-title">Patrimoine &amp; Villages</div>
+        <div class="sec-title t" data-key="pat_title">Patrimoine &amp; Villages</div>
       </div>
     </div>
     <div class="cards two">
-
       <div class="card star" onclick="openLB('SAUXILLANGES.jpg','Sauxillanges – site clunisien médiéval')">
         <img src="SAUXILLANGES.jpg" alt="Sauxillanges site clunisien médiéval">
         <div class="card-body">
-          <span class="card-dist">8 km</span>
-          <h3>Sauxillanges – Site Clunisien</h3>
-          <p>Bourg médiéval fondé au Xe s. autour d'un prieuré de l'Abbaye de Cluny. Animations estivales.</p>
-          <p class="detail">
-            🛒 Marché mardi matin<br>
-            🎶 Guinguette Folle Allier (jeudis soir en été)<br>
-            🎭 Balades théâtralisées mardi soir en été<br>
-            🏛 Maison du Patrimoine
-          </p>
-          <a class="btn" href="https://www.issoire-tourisme.com/culture-patrimoine/sauxillanges-site-clunisien/" target="_blank" onclick="event.stopPropagation()">→ Issoire Tourisme</a>
+          <h3 class="t" data-key="pat_h1">Sauxillanges – Site Clunisien</h3>
+          <p class="t" data-key="pat_p1">Bourg médiéval fondé au Xe s. autour d'un prieuré de l'Abbaye de Cluny. Animations estivales.</p>
+          <p class="detail t" data-key="pat_detail1">🛒 Marché mardi matin<br>🎶 Guinguette Folle Allier (jeudis soir en été)<br>🎭 Balades théâtralisées mardi soir en été<br>🏛 Maison du Patrimoine</p>
+          <a class="btn t" href="https://www.issoire-tourisme.com/culture-patrimoine/sauxillanges-site-clunisien/" target="_blank" onclick="event.stopPropagation()" data-key="pat_btn1">→ Issoire Tourisme</a>
         </div>
       </div>
-
       <div class="card" onclick="openLB('usson.jpg','Usson – village de la Reine Margot et orgues basaltiques')">
         <img src="usson.jpg" alt="Usson village Reine Margot orgues basaltiques">
         <div class="card-body">
-          <span class="card-dist">12 km · Plus Beau Village de France</span>
-          <h3>Usson – La Reine Margot &amp; les Orgues</h3>
-          <p>Perché sur son piton d'orgues basaltiques, Usson est l'un des Plus Beaux Villages de France. La Reine Margot y fut exilée de 1586 à 1605.</p>
-          <p class="detail">🪨 Orgues basaltiques · 🗺 Circuit 4 km · 2h · Gratuit</p>
+          <span class="card-dist t" data-key="pat_dist2">12 km · Plus Beau Village de France</span>
+          <h3 class="t" data-key="pat_h2">Usson – La Reine Margot &amp; les Orgues</h3>
+          <p class="t" data-key="pat_p2">Perché sur son piton d'orgues basaltiques, Usson est l'un des Plus Beaux Villages de France. La Reine Margot y fut exilée de 1586 à 1605.</p>
+          <p class="detail t" data-key="pat_detail2">🪨 Orgues basaltiques · 🗺 Circuit 4 km · 2h · Gratuit</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('montpeyroux.jpg','Montpeyroux – Plus Beau Village de France')">
         <img src="montpeyroux.jpg" alt="Montpeyroux village médiéval">
         <div class="card-body">
-          <span class="card-dist">18 km · Plus Beau Village de France</span>
-          <h3>Montpeyroux</h3>
-          <p>Village de tailleurs de pierre classé Plus Beau Village de France. Maisons en arkose dorée, donjon de 30 m, ruelles pavées et vignerons locaux.</p>
+          <span class="card-dist t" data-key="pat_dist3">18 km · Plus Beau Village de France</span>
+          <h3 class="t" data-key="pat_h3">Montpeyroux</h3>
+          <p class="t" data-key="pat_p3">Village de tailleurs de pierre classé Plus Beau Village de France. Maisons en arkose dorée, donjon de 30 m, ruelles pavées et vignerons locaux.</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('chateau_parentignat.jpg','Château de Parentignat – le Versailles auvergnat')">
         <img src="chateau_parentignat.jpg" alt="Château de Parentignat">
         <div class="card-body">
-          <span class="card-dist">15 km</span>
-          <h3>Château de Parentignat</h3>
-          <p>Le "Versailles auvergnat" : château du XVIIIe et ses jardins à la française, ouverts à la visite en saison. Collection mobilière exceptionnelle.</p>
+          <span class="card-dist t" data-key="pat_dist4">15 km</span>
+          <h3 class="t" data-key="pat_h4">Château de Parentignat</h3>
+          <p class="t" data-key="pat_p4">Le "Versailles auvergnat" : château du XVIIIe et ses jardins à la française, ouverts à la visite en saison. Collection mobilière exceptionnelle.</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('abbatiale_issoire.jpg','Abbatiale Saint-Austremoine – Issoire')">
         <img src="abbatiale_issoire.jpg" alt="Abbatiale romane Saint-Austremoine Issoire">
         <div class="card-body">
-          <span class="card-dist">20 min</span>
-          <h3>Issoire &amp; son Abbatiale romane</h3>
-          <p>L'une des plus belles abbatiales romanes d'Auvergne (XIe s.), classée monument historique. Commerces, cinéma. Animations vendredis soir en été.</p>
-          <p class="detail">🎪 Vendredis soir animés en été · Marché samedi matin</p>
+          <span class="card-dist t" data-key="pat_dist5">20 min</span>
+          <h3 class="t" data-key="pat_h5">Issoire &amp; son Abbatiale romane</h3>
+          <p class="t" data-key="pat_p5">L'une des plus belles abbatiales romanes d'Auvergne (XIe s.), classée monument historique. Commerces, cinéma. Animations vendredis soir en été.</p>
+          <p class="detail t" data-key="pat_detail5">🎪 Vendredis soir animés en été · Marché samedi matin</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('saint_nectaire.jpg','Saint-Nectaire – église romane et fromages AOP')">
         <img src="saint_nectaire.jpg" alt="Saint-Nectaire église romane">
         <div class="card-body">
-          <span class="card-dist">50 min</span>
-          <h3>Saint-Nectaire &amp; ses Fromages</h3>
-          <p>Village thermal et fromager AOP. Visitez une cave d'affinage, goûtez en direct le vrai Saint-Nectaire fermier. Église romane du XIIe remarquable.</p>
-          <p class="detail">🧀 Dégustation sur place · À coupler avec le Lac Pavin</p>
+          <span class="card-dist t" data-key="pat_dist6">50 min</span>
+          <h3 class="t" data-key="pat_h6">Saint-Nectaire &amp; ses Fromages</h3>
+          <p class="t" data-key="pat_p6">Village thermal et fromager AOP. Visitez une cave d'affinage, goûtez en direct le vrai Saint-Nectaire fermier. Église romane du XIIe remarquable.</p>
+          <p class="detail t" data-key="pat_detail6">🧀 Dégustation sur place · À coupler avec le Lac Pavin</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('brioude.jpg','Basilique Saint-Julien de Brioude')">
         <img src="brioude.jpg" alt="Basilique Saint-Julien de Brioude illuminée">
         <div class="card-body">
-          <span class="card-dist">30 min · Haute-Loire</span>
-          <h3>Brioude &amp; la Basilique Saint-Julien</h3>
-          <p>La plus grande église romane d'Auvergne (XIe–XIIe s.), classée monument historique. Ses chapiteaux polychromes sont parmi les plus beaux de l'art roman. La ville de Brioude, ancienne cité gallo-romaine au bord de l'Allier, vaut également la promenade.</p>
-          <p class="detail">🏛 Entrée libre · Visites guidées en saison<br>🐟 Brioude : capitale française de la pêche au saumon</p>
+          <span class="card-dist t" data-key="pat_dist7">30 min · Haute-Loire</span>
+          <h3 class="t" data-key="pat_h7">Brioude &amp; la Basilique Saint-Julien</h3>
+          <p class="t" data-key="pat_p7">La plus grande église romane d'Auvergne (XIe–XIIe s.), classée monument historique. Ses chapiteaux polychromes sont parmi les plus beaux de l'art roman.</p>
+          <p class="detail t" data-key="pat_detail7">🏛 Entrée libre · Visites guidées en saison<br>🐟 Brioude : capitale française de la pêche au saumon</p>
         </div>
       </div>
-
       <div class="card" onclick="openLB('chaise_dieu.jpg','Abbaye de la Chaise-Dieu')">
         <img src="chaise_dieu.jpg" alt="Abbaye de la Chaise-Dieu cloître gothique">
         <div class="card-body">
-          <span class="card-dist">45 min · Haute-Loire</span>
-          <h3>La Chaise-Dieu – Abbaye &amp; Festival</h3>
-          <p>L'une des plus grandes abbayes bénédictines de France (XIVe s.), perchée à 1 082 m d'altitude. Chef-d'œuvre de l'art gothique avec sa célèbre "Danse macabre" peinte, ses tapisseries flamandes du XVIe s. et son exceptionnel jubé.</p>
-          <p class="detail">🎵 Festival de musique classique et sacrée chaque été<br>🏔 Village de caractère · Forêts et air vivifiant</p>
+          <span class="card-dist t" data-key="pat_dist8">45 min · Haute-Loire</span>
+          <h3 class="t" data-key="pat_h8">La Chaise-Dieu – Abbaye &amp; Festival</h3>
+          <p class="t" data-key="pat_p8">L'une des plus grandes abbayes bénédictines de France (XIVe s.), perchée à 1 082 m. Chef-d'œuvre de l'art gothique avec sa "Danse macabre" et ses tapisseries flamandes.</p>
+          <p class="detail t" data-key="pat_detail8">🎵 Festival de musique classique et sacrée chaque été<br>🏔 Village de caractère · Forêts et air vivifiant</p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -483,25 +433,23 @@
       <div class="sec-banner-text">
         <div class="sec-icon-w">🛒</div>
         <div>
-          <div class="sec-title-w">Marchés &amp; Saveurs Locales</div>
-          <div class="sec-sub-w">Le terroir auvergnat en circuit court</div>
+          <div class="sec-title-w t" data-key="mar_title">Marchés &amp; Saveurs Locales</div>
+          <div class="sec-sub-w t" data-key="mar_sub">Le terroir auvergnat en circuit court</div>
         </div>
       </div>
     </div>
-
     <div class="marche-row">
-      <div class="marche-day vert">MARDI<br>matin</div>
+      <div class="marche-day vert t" data-key="mar_day1">MARDI<br>matin</div>
       <div class="marche-info">
-        <h4>Marché de Sauxillanges</h4>
-        <p>Marché de village au cœur du bourg clunisien. Producteurs locaux : fromages, légumes, volailles, miel, artisanat. À combiner avec une balade dans les ruelles médiévales.</p>
+        <h4 class="t" data-key="mar_h1">Marché de Sauxillanges</h4>
+        <p class="t" data-key="mar_p1">Marché de village au cœur du bourg clunisien. Producteurs locaux : fromages, légumes, volailles, miel, artisanat. À combiner avec une balade dans les ruelles médiévales.</p>
       </div>
     </div>
-
     <div class="marche-row">
-      <div class="marche-day orange">SAMEDI<br>matin</div>
+      <div class="marche-day orange t" data-key="mar_day2">SAMEDI<br>matin</div>
       <div class="marche-info">
-        <h4>Grand Marché d'Issoire</h4>
-        <p>Le plus grand marché de la région : fromageries, charcuteries, vins des Côtes d'Auvergne, légumes bio, fleurs. Idéal pour faire le plein de produits locaux.</p>
+        <h4 class="t" data-key="mar_h2">Grand Marché d'Issoire</h4>
+        <p class="t" data-key="mar_p2">Le plus grand marché de la région : fromageries, charcuteries, vins des Côtes d'Auvergne, légumes bio, fleurs. Idéal pour faire le plein de produits locaux.</p>
       </div>
     </div>
 
@@ -510,56 +458,48 @@
     <div class="sec-head">
       <div class="sec-icon">🍽</div>
       <div>
-        <div class="sec-title">Quelques Bonnes Tables</div>
-        <div class="sec-sub">Des adresses testées et appréciées dans la région</div>
+        <div class="sec-title t" data-key="tab_title">Quelques Bonnes Tables</div>
+        <div class="sec-sub t" data-key="tab_sub">Des adresses testées et appréciées dans la région</div>
       </div>
     </div>
     <div class="resto-grid">
-
       <div class="resto-card">
         <h4>Le P'tit Roseau</h4>
         <span class="resto-loc">📍 Issoire · ~20 min</span>
-        <p>Cuisine du marché, produits locaux et saison. Cadre chaleureux, belle carte de vins auvergnats.</p>
+        <p class="t" data-key="resto_roseau">Cuisine du marché, produits locaux et saison. Cadre chaleureux, belle carte de vins auvergnats.</p>
       </div>
-
       <div class="resto-card">
         <h4>L'Agastache</h4>
         <span class="resto-loc">📍 Issoire · ~20 min</span>
-        <p>Table inventive et végétale mettant à l'honneur les herbes aromatiques et les producteurs locaux.</p>
+        <p class="t" data-key="resto_agastache">Table inventive et végétale mettant à l'honneur les herbes aromatiques et les producteurs locaux.</p>
       </div>
-
       <div class="resto-card">
         <h4>Hobistro</h4>
         <span class="resto-loc">📍 Issoire · ~20 min</span>
-        <p>Bistrot convivial à l'ambiance décontractée. Plats généreux, bonne sélection de bières artisanales.</p>
+        <p class="t" data-key="resto_hobistro">Bistrot convivial à l'ambiance décontractée. Plats généreux, bonne sélection de bières artisanales.</p>
       </div>
-
       <div class="resto-card">
         <h4>L'Acérola</h4>
         <span class="resto-loc">📍 Issoire · ~20 min</span>
-        <p>Cuisine soignée et créative, belle terrasse en saison. Une valeur sûre au cœur d'Issoire.</p>
+        <p class="t" data-key="resto_acerola">Cuisine soignée et créative, belle terrasse en saison. Une valeur sûre au cœur d'Issoire.</p>
       </div>
-
       <div class="resto-card special">
         <h4>Chez Marthe</h4>
         <span class="resto-loc">📍 Condat-lès-Montboissier · ~15 min</span>
-        <p>Restaurant de campagne familial à l'ancienne. Repas ouvrier en semaine : simple, généreux, savoureux. Une vraie expérience du terroir auvergnat.</p>
+        <p class="t" data-key="resto_marthe">Restaurant de campagne familial à l'ancienne. Repas ouvrier en semaine : simple, généreux, savoureux. Une vraie expérience du terroir auvergnat.</p>
       </div>
-
       <div class="resto-card special">
         <h4>La Bergerie de Sarpoil</h4>
         <span class="resto-loc">📍 Sarpoil · ~15 min</span>
-        <p>Adresse gastronomique réputée dans une bergerie rénovée. Cuisine raffinée, produits du terroir, cadre exceptionnel. Réservation indispensable.</p>
+        <p class="t" data-key="resto_sarpoil">Adresse gastronomique réputée dans une bergerie rénovée. Cuisine raffinée, produits du terroir, cadre exceptionnel. Réservation indispensable.</p>
       </div>
-
       <div class="resto-card">
         <h4>La Table Saint-Martin</h4>
         <span class="resto-loc">📍 Sauxillanges · 8 km</span>
-        <p>Table agréable au cœur du site clunisien. Cuisine régionale soignée, idéale après une balade dans les ruelles de Sauxillanges.</p>
+        <p class="t" data-key="resto_saintmartin">Table agréable au cœur du site clunisien. Cuisine régionale soignée, idéale après une balade dans les ruelles de Sauxillanges.</p>
       </div>
-
     </div>
-    <p style="margin-top:14px;font-size:.81rem;color:var(--gris)">💡 Pensez à réserver, surtout en été — les bonnes tables affichent vite complet !</p>
+    <p style="margin-top:14px;font-size:.81rem;color:var(--gris)" class="t" data-key="tab_note">💡 Pensez à réserver, surtout en été — les bonnes tables affichent vite complet !</p>
   </section>
 
   <!-- FESTIVITÉS -->
@@ -569,40 +509,35 @@
       <div class="sec-banner-text">
         <div class="sec-icon-w">🎶</div>
         <div>
-          <div class="sec-title-w">Festivités Estivales</div>
-          <div class="sec-sub-w">L'été en Auvergne, ça danse, ça chante et ça fête !</div>
+          <div class="sec-title-w t" data-key="festi_title">Festivités Estivales</div>
+          <div class="sec-sub-w t" data-key="festi_sub">L'été en Auvergne, ça danse, ça chante et ça fête !</div>
         </div>
       </div>
     </div>
-    <p style="margin-bottom:18px;font-size:.88rem;color:#555">
+    <p style="margin-bottom:18px;font-size:.88rem;color:#555" class="t" data-key="festi_agenda">
       Retrouvez l'agenda complet sur <a href="https://www.issoire-tourisme.com/agenda/agenda-des-animations/" target="_blank" style="color:var(--vert);font-weight:700">issoire-tourisme.com →</a>
     </p>
     <div class="festi-grid">
-
       <div class="festi-card">
-        <div class="tag-jour">🎪 Vendredis soir · Été</div>
-        <h3>Animations estivales · Issoire</h3>
-        <p>Chaque vendredi soir en juillet-août : concerts, spectacles de rue, marchés nocturnes autour de l'abbatiale illuminée</p>
+        <div class="tag-jour t" data-key="festi_tag1">🎪 Vendredis soir · Été</div>
+        <h3 class="t" data-key="festi_h1">Animations estivales · Issoire</h3>
+        <p class="t" data-key="festi_p1">Chaque vendredi soir en juillet-août : concerts, spectacles de rue, marchés nocturnes autour de l'abbatiale illuminée</p>
       </div>
-
       <div class="festi-card blue">
-        <div class="tag-jour blue">🎸 Jeudis soir · Été</div>
-        <h3>La Guinguette Folle Allier · Sauxillanges</h3>
-        <p>Concerts en plein air les jeudis soir à Sauxillanges . Brunch, snacks locaux et bonne humeur dans un cadre atypique !</p>
+        <div class="tag-jour blue t" data-key="festi_tag2">🎸 Jeudis soir · Été</div>
+        <h3 class="t" data-key="festi_h2">La Guinguette Folle Allier · Sauxillanges</h3>
+        <p class="t" data-key="festi_p2">Concerts en plein air les jeudis soir à Sauxillanges. Brunch, snacks locaux et bonne humeur dans un cadre atypique !</p>
       </div>
-
       <div class="festi-card green">
-        <div class="tag-jour green">🎭 Mardis soir · Été</div>
-        <h3>Balades Théâtralisées · Sauxillanges</h3>
-        <p>Enquête policière médiévale au cœur du site clunisien. Tout public · 1h30 · Sur réservation. Syndicat d'initiative : 04 73 96 85 10.</p>
+        <div class="tag-jour green t" data-key="festi_tag3">🎭 Mardis soir · Été</div>
+        <h3 class="t" data-key="festi_h3">Balades Théâtralisées · Sauxillanges</h3>
+        <p class="t" data-key="festi_p3">Enquête policière médiévale au cœur du site clunisien. Tout public · 1h30 · Sur réservation. Syndicat d'initiative : 04 73 96 85 10.</p>
       </div>
-
       <div class="festi-card">
-        <div class="tag-jour">🎵 Août · La Chaise-Dieu</div>
-        <h3>Festival de la Chaise-Dieu</h3>
-        <p>L'un des plus grands festivals de musique classique et sacrée de France, dans le cadre exceptionnel de l'abbaye bénédictine du XIVe siècle. 45 min de la maison.</p>
+        <div class="tag-jour t" data-key="festi_tag4">🎵 Août · La Chaise-Dieu</div>
+        <h3 class="t" data-key="festi_h4">Festival de la Chaise-Dieu</h3>
+        <p class="t" data-key="festi_p4">L'un des plus grands festivals de musique classique et sacrée de France, dans le cadre exceptionnel de l'abbaye bénédictine du XIVe siècle. 45 min de la maison.</p>
       </div>
-
     </div>
   </section>
 
@@ -613,35 +548,35 @@
       <div class="sec-banner-text">
         <div class="sec-icon-w">🌋</div>
         <div>
-          <div class="sec-title-w">Volcans &amp; Grands Espaces</div>
-          <div class="sec-sub-w">Les plus beaux panoramas de France à portée de voiture</div>
+          <div class="sec-title-w t" data-key="vol_title">Volcans &amp; Grands Espaces</div>
+          <div class="sec-sub-w t" data-key="vol_sub">Les plus beaux panoramas de France à portée de voiture</div>
         </div>
       </div>
     </div>
     <div class="cards two">
       <div class="card">
         <div class="card-body">
-          <h3>Puy de Dôme</h3>
-          <p>Le sommet emblématique (1 465 m), classé UNESCO. Montée à pied ou en Panoramique des Dômes. Vue à 360° sur la chaîne des volcans.</p>
-          <a class="btn" href="https://www.panoramiquedesdomes.fr" target="_blank" onclick="event.stopPropagation()">→ Panoramique des Dômes</a>
+          <h3 class="t" data-key="vol_h1">Puy de Dôme</h3>
+          <p class="t" data-key="vol_p1">Le sommet emblématique (1 465 m), classé UNESCO. Montée à pied ou en Panoramique des Dômes. Vue à 360° sur la chaîne des volcans.</p>
+          <a class="btn t" href="https://www.panoramiquedesdomes.fr" target="_blank" onclick="event.stopPropagation()" data-key="vol_btn1">→ Panoramique des Dômes</a>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>Puy de Sancy</h3>
-          <p>Point culminant du Massif Central (1 886 m). Téléphérique, randonnées, sources de la Dordogne. Ski en hiver, fraîcheur en été.</p>
+          <h3 class="t" data-key="vol_h2">Puy de Sancy</h3>
+          <p class="t" data-key="vol_p2">Point culminant du Massif Central (1 886 m). Téléphérique, randonnées, sources de la Dordogne. Ski en hiver, fraîcheur en été.</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>Vallée de la Chaudefour</h3>
-          <p>Réserve naturelle nationale au cœur du Sancy. Paysage volcanique spectaculaire, flore protégée, marmottes, vautours fauves.</p>
+          <h3 class="t" data-key="vol_h3">Vallée de la Chaudefour</h3>
+          <p class="t" data-key="vol_p3">Réserve naturelle nationale au cœur du Sancy. Paysage volcanique spectaculaire, flore protégée, marmottes, vautours fauves.</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>Lac Pavin · Besse-en-Chandesse</h3>
-          <p>Le lac volcanique le plus profond de France, dans un cratère parfait. Baignade, kayak, randonnée autour du lac (2 km).</p>
+          <h3 class="t" data-key="vol_h4">Lac Pavin · Besse-en-Chandesse</h3>
+          <p class="t" data-key="vol_p4">Le lac volcanique le plus profond de France, dans un cratère parfait. Baignade, kayak, randonnée autour du lac (2 km).</p>
         </div>
       </div>
     </div>
@@ -654,44 +589,39 @@
       <div class="sec-banner-text">
         <div class="sec-icon-w">ℹ️</div>
         <div>
-          <div class="sec-title-w">Infos Pratiques</div>
-          <div class="sec-sub-w">Tout ce qu'il faut savoir avant de partir</div>
+          <div class="sec-title-w t" data-key="prat_title">Infos Pratiques</div>
+          <div class="sec-sub-w t" data-key="prat_sub">Tout ce qu'il faut savoir avant de partir</div>
         </div>
       </div>
     </div>
     <div class="cards two">
       <div class="card">
         <div class="card-body">
-          <h3>Commerces à proximité</h3>
-          <p><strong>Vernet-la-Varenne (5 min)</strong> : boulangerie, boucher, supérette, bar, pharmacie, médecin.<br><br>
-          <strong>Sauxillanges (8 km)</strong> : commerces, supermarché, restaurants.<br><br>
-          <strong>Issoire (20 min)</strong> : grande surface, cinéma, hôpital, toutes enseignes.</p>
+          <h3 class="t" data-key="prat_h1">Commerces à proximité</h3>
+          <p class="t" data-key="prat_p1"><strong>Vernet-la-Varenne (5 min)</strong> : boulangerie, boucher, supérette, bar, pharmacie, médecin.<br><br><strong>Sauxillanges (8 km)</strong> : commerces, supermarché, restaurants.<br><br><strong>Issoire (20 min)</strong> : grande surface, cinéma, hôpital, toutes enseignes.</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>Office de Tourisme · Pays d'Issoire</h3>
-          <p>Conseils, cartes de randonnées, topoguides, location de vélos et agenda des animations.</p>
+          <h3 class="t" data-key="prat_h2">Office de Tourisme · Pays d'Issoire</h3>
+          <p class="t" data-key="prat_p2">Conseils, cartes de randonnées, topoguides, location de vélos et agenda des animations.</p>
           <p class="detail">
             🌐 <a href="https://www.issoire-tourisme.com" target="_blank" style="color:var(--vert)">issoire-tourisme.com</a><br>
-            📅 <a href="https://www.issoire-tourisme.com/agenda/agenda-des-animations/" target="_blank" style="color:var(--vert)">Agenda des animations →</a>
+            📅 <a href="https://www.issoire-tourisme.com/agenda/agenda-des-animations/" target="_blank" style="color:var(--vert)" class="t" data-key="prat_agenda">Agenda des animations →</a>
           </p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>Accès &amp; Transports</h3>
-          <p>A75 sortie n°13 (Issoire Nord) · 18 km d'Issoire<br>
-          Gare SNCF Issoire : 20 min<br>
-          Aéroport Clermont-Ferrand : 42 km<br>
-          <em style="color:var(--vert);font-weight:700">L'A75 est gratuite dans toute l'Auvergne !</em></p>
+          <h3 class="t" data-key="prat_h3">Accès &amp; Transports</h3>
+          <p class="t" data-key="prat_p3">A75 sortie n°13 (Issoire Nord) · 18 km d'Issoire<br>Gare SNCF Issoire : 20 min<br>Aéroport Clermont-Ferrand : 42 km<br><em style="color:var(--vert);font-weight:700">L'A75 est gratuite dans toute l'Auvergne !</em></p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
-          <h3>VTT &amp; Vélos</h3>
-          <p>Parcours VTT balisé sur Vernet-la-Varenne et environs. Cartes au syndicat d'initiative de Sauxillanges.</p>
-          <p class="detail">🚵 Location de VTT à Vernet-la-Varenne</p>
+          <h3 class="t" data-key="prat_h4">VTT &amp; Vélos</h3>
+          <p class="t" data-key="prat_p4">Parcours VTT balisé sur Vernet-la-Varenne et environs. Cartes au syndicat d'initiative de Sauxillanges.</p>
+          <p class="detail t" data-key="prat_detail4">🚵 Location de VTT à Vernet-la-Varenne</p>
         </div>
       </div>
     </div>
@@ -700,9 +630,9 @@
 </main>
 
 <footer>
-  <strong>Havre de paix écorénovée · Hameau de Badarel, Bansat (63420) · Auvergne</strong><br>
-  Guide préparé par votre hôte Sidonie · Sources : <a href="https://www.issoire-tourisme.com" target="_blank">issoire-tourisme.com</a> · <a href="https://www.parcanimalierdauvergne.fr" target="_blank">parcanimalierdauvergne.fr</a> · Mis à jour 2026<br>
-  <span style="margin-top:8px;display:block">Votre voisine directe — n'hésitez pas à frapper à ma porte pour tout conseil 🌿</span>
+  <strong class="t" data-key="footer_name">Havre de paix écorénovée · Hameau de Badarel, Bansat (63420) · Auvergne</strong><br>
+  <span class="t" data-key="footer_guide">Guide préparé par votre hôte Sidonie · Sources : <a href="https://www.issoire-tourisme.com" target="_blank">issoire-tourisme.com</a> · <a href="https://www.parcanimalierdauvergne.fr" target="_blank">parcanimalierdauvergne.fr</a> · Mis à jour 2026</span><br>
+  <span style="margin-top:8px;display:block" class="t" data-key="footer_note">Votre voisine directe — n'hésitez pas à frapper à ma porte pour tout conseil 🌿</span>
 </footer>
 
 <!-- LIGHTBOX -->
@@ -712,17 +642,246 @@
 </div>
 
 <script>
-  function openLB(src, alt) {
-    document.getElementById('lb-img').src = src;
-    document.getElementById('lb-img').alt = alt || '';
-    document.getElementById('lb').classList.add('open');
-    document.body.style.overflow = 'hidden';
+const T = {
+  fr: {
+    hero_badge: '🌿 Guide du séjour · 2026',
+    hero_title: 'Bienvenue au hameau de <em>Badarel</em><br>en Auvergne',
+    hero_sub: "Votre base idéale pour familles et randonneurs · Pays d'Issoire · PNR Livradois-Forez · Volcans d'Auvergne",
+    nav_lac: '🏊 Lac', nav_rando: '🥾 Randos', nav_famille: '👨‍👩‍👧 Familles',
+    nav_patrimoine: '🏰 Patrimoine', nav_marches: '🛒 Marchés', nav_tables: '🍽 Bonnes tables',
+    nav_festi: '🎶 Festivités', nav_volcans: '🌋 Volcans', nav_pratique: 'ℹ️ Pratique',
+    lac_title: "Le Plan d'Eau du Vernet", lac_sub: 'À 5 minutes en voiture depuis le hameau de Badarel',
+    lac_dist1: '⭐ Incontournable', lac_h1: 'Baignade &amp; Loisirs · Vernet-la-Varenne',
+    lac_p1: "Seul plan d'eau de baignade surveillée du Pays d'Issoire. 3 hectares de nature préservée au cœur du PNR Livradois-Forez. Idéal pour toute la famille !",
+    lac_detail1: "🏖 Baignade surveillée en juillet–août<br>🚣 Pédalo · Paddle · Stand-up paddle<br>🌲 Accrobranche · Pêche · Aire de jeux<br>🎾 Tennis · Pétanque · Volleyball<br>🍔 Bar &amp; restauration · 🆓 Accès libre toute l'année",
+    lac_h2: "Musée de l'Améthyste &amp; ses animations",
+    lac_p2: "Découvrez le principal gisement d'améthyste d'Europe ! Visite du musée, chasse aux cristaux sur le site, initiation au polissage et fabrication de bijoux à emporter en souvenir.",
+    lac_detail2: '🔮 Visite du musée et du gisement<br>💎 Atelier taille et polissage des pierres<br>🛍 Boutique : bijoux, cristaux, minéraux<br>🎨 Animations en saison pour les enfants',
+    lac_dist3: 'Juillet–Août', lac_h3: 'Accrobranche au bord du lac',
+    lac_p3: "Parcours dans les arbres pour petits et grands, directement au bord du plan d'eau. Accessible dès 3 ans !",
+    rando_title: 'Quelques idées de randonnées', rando_sub: 'Nombreuses balades à proximité · PNR Livradois-Forez, Sancy, Puy de Dôme…',
+    rando_1_title: 'Boucle de la Ribeyre', rando_1_sub: 'Départ de la maison · Sous-bois, ruisseau, tranquillité', rando_1_warn: '⚠️ Attention au dénivelé 😉',
+    rando_2_title: 'Vallée du Civadoux – Sauxillanges', rando_2_sub: 'Bourg médiéval · Moulin ancien · Vue sur Sancy et Puys · Église romane Saint-Quentin',
+    rando_3_title: 'Étang de Lospeux – Sauxillanges', rando_3_sub: 'Pêche, pique-nique, hérons cendrés · Facile en famille',
+    rando_4_title: 'Vallée des Saints · Boudes', rando_4_sub: 'Vignes, orgues basaltiques, village médiéval perché',
+    rando_5_title: "Tour du Puy d'Usson", rando_5_sub: 'Vue 360° sur le Lembron · Orgues basaltiques · Village de la Reine Margot',
+    rando_6_title: 'Vallée de la Chaudefour · Massif du Sancy', rando_6_sub: 'Réserve naturelle nationale · Paysage volcanique spectaculaire · Flore protégée',
+    rando_gps: '📱 Traces GPS sur <strong>Visorando</strong> et <strong>Komoot</strong> · Topos à la maison et à l\'Office de Tourisme d\'Issoire',
+    fam_title: 'Sorties Familles', fam_sub: 'Des activités pour tous les âges',
+    fam_dist1: '⭐ Incontournable · 40 min', fam_h1: "Parc Animalier d'Auvergne · Ardes-sur-Couze",
+    fam_p1: "350 animaux de 65 espèces menacées sur 50 ha. Girafes, lions, pandas roux, panthères des neiges, lémuriens… Entièrement dédié aux espèces en danger.",
+    fam_detail1: '🗓 Ouvert février–décembre · Jours fériés inclus<br>🎟 Adulte : 24,50€–28,50€ · Enfant 3-9 ans : 17,50€–21,50€<br>👶 -3 ans gratuit · 💡 -3€/billet réservé 3j avant',
+    fam_btn1: '→ Site officiel', fam_dist2: '30 min', fam_h2: 'Grottes de Perrier',
+    fam_p2: "Ancien village troglodytique en accès libre, creusé dans la falaise de pouzzolane. Balade d'une heure dans un cadre insolite, parfaite pour les enfants curieux.",
+    fam_detail2: '🆓 Accès libre · ~1h · Facile · Toute l\'année',
+    fam_dist3: '20 min · Issoire', fam_h3: 'Centre Aqualudique',
+    fam_p3: "Toboggans, bassins intérieurs et extérieurs, pataugeoire. L'option idéale les jours de grande chaleur ou de pluie !",
+    fam_detail3: '🌧 Idéal si mauvais temps · Ouvert toute l\'année',
+    fam_dist4: '1h15', fam_h4: 'Vulcania',
+    fam_p4: 'Le grand parc européen du volcanisme. Manèges, films 4D, attractions spectaculaires autour des volcans. Incontournable avec des enfants.',
+    fam_detail4: '🌋 Réservation conseillée en été · <a href="https://www.vulcania.com" target="_blank" style="color:var(--vert)" onclick="event.stopPropagation()">vulcania.com</a>',
+    pat_title: 'Patrimoine &amp; Villages',
+    pat_h1: 'Sauxillanges – Site Clunisien', pat_p1: "Bourg médiéval fondé au Xe s. autour d'un prieuré de l'Abbaye de Cluny. Animations estivales.",
+    pat_detail1: '🛒 Marché mardi matin<br>🎶 Guinguette Folle Allier (jeudis soir en été)<br>🎭 Balades théâtralisées mardi soir en été<br>🏛 Maison du Patrimoine',
+    pat_btn1: '→ Issoire Tourisme',
+    pat_dist2: '12 km · Plus Beau Village de France', pat_h2: 'Usson – La Reine Margot &amp; les Orgues',
+    pat_p2: "Perché sur son piton d'orgues basaltiques, Usson est l'un des Plus Beaux Villages de France. La Reine Margot y fut exilée de 1586 à 1605.",
+    pat_detail2: '🪨 Orgues basaltiques · 🗺 Circuit 4 km · 2h · Gratuit',
+    pat_dist3: '18 km · Plus Beau Village de France', pat_h3: 'Montpeyroux',
+    pat_p3: "Village de tailleurs de pierre classé Plus Beau Village de France. Maisons en arkose dorée, donjon de 30 m, ruelles pavées et vignerons locaux.",
+    pat_dist4: '15 km', pat_h4: 'Château de Parentignat',
+    pat_p4: 'Le "Versailles auvergnat" : château du XVIIIe et ses jardins à la française, ouverts à la visite en saison. Collection mobilière exceptionnelle.',
+    pat_dist5: '20 min', pat_h5: 'Issoire &amp; son Abbatiale romane',
+    pat_p5: "L'une des plus belles abbatiales romanes d'Auvergne (XIe s.), classée monument historique. Commerces, cinéma. Animations vendredis soir en été.",
+    pat_detail5: '🎪 Vendredis soir animés en été · Marché samedi matin',
+    pat_dist6: '50 min', pat_h6: 'Saint-Nectaire &amp; ses Fromages',
+    pat_p6: "Village thermal et fromager AOP. Visitez une cave d'affinage, goûtez en direct le vrai Saint-Nectaire fermier. Église romane du XIIe remarquable.",
+    pat_detail6: '🧀 Dégustation sur place · À coupler avec le Lac Pavin',
+    pat_dist7: '30 min · Haute-Loire', pat_h7: 'Brioude &amp; la Basilique Saint-Julien',
+    pat_p7: "La plus grande église romane d'Auvergne (XIe–XIIe s.), classée monument historique. Ses chapiteaux polychromes sont parmi les plus beaux de l'art roman.",
+    pat_detail7: '🏛 Entrée libre · Visites guidées en saison<br>🐟 Brioude : capitale française de la pêche au saumon',
+    pat_dist8: '45 min · Haute-Loire', pat_h8: 'La Chaise-Dieu – Abbaye &amp; Festival',
+    pat_p8: 'L\'une des plus grandes abbayes bénédictines de France (XIVe s.), perchée à 1 082 m. Chef-d\'œuvre de l\'art gothique avec sa "Danse macabre" et ses tapisseries flamandes.',
+    pat_detail8: '🎵 Festival de musique classique et sacrée chaque été<br>🏔 Village de caractère · Forêts et air vivifiant',
+    mar_title: 'Marchés &amp; Saveurs Locales', mar_sub: 'Le terroir auvergnat en circuit court',
+    mar_day1: 'MARDI<br>matin', mar_h1: 'Marché de Sauxillanges',
+    mar_p1: 'Marché de village au cœur du bourg clunisien. Producteurs locaux : fromages, légumes, volailles, miel, artisanat. À combiner avec une balade dans les ruelles médiévales.',
+    mar_day2: 'SAMEDI<br>matin', mar_h2: "Grand Marché d'Issoire",
+    mar_p2: "Le plus grand marché de la région : fromageries, charcuteries, vins des Côtes d'Auvergne, légumes bio, fleurs. Idéal pour faire le plein de produits locaux.",
+    tab_title: 'Quelques Bonnes Tables', tab_sub: 'Des adresses testées et appréciées dans la région',
+    resto_roseau: 'Cuisine du marché, produits locaux et saison. Cadre chaleureux, belle carte de vins auvergnats.',
+    resto_agastache: "Table inventive et végétale mettant à l'honneur les herbes aromatiques et les producteurs locaux.",
+    resto_hobistro: "Bistrot convivial à l'ambiance décontractée. Plats généreux, bonne sélection de bières artisanales.",
+    resto_acerola: "Cuisine soignée et créative, belle terrasse en saison. Une valeur sûre au cœur d'Issoire.",
+    resto_marthe: "Restaurant de campagne familial à l'ancienne. Repas ouvrier en semaine : simple, généreux, savoureux. Une vraie expérience du terroir auvergnat.",
+    resto_sarpoil: 'Adresse gastronomique réputée dans une bergerie rénovée. Cuisine raffinée, produits du terroir, cadre exceptionnel. Réservation indispensable.',
+    resto_saintmartin: 'Table agréable au cœur du site clunisien. Cuisine régionale soignée, idéale après une balade dans les ruelles de Sauxillanges.',
+    tab_note: '💡 Pensez à réserver, surtout en été — les bonnes tables affichent vite complet !',
+    festi_title: 'Festivités Estivales', festi_sub: "L'été en Auvergne, ça danse, ça chante et ça fête !",
+    festi_agenda: "Retrouvez l'agenda complet sur <a href=\"https://www.issoire-tourisme.com/agenda/agenda-des-animations/\" target=\"_blank\" style=\"color:var(--vert);font-weight:700\">issoire-tourisme.com →</a>",
+    festi_tag1: '🎪 Vendredis soir · Été', festi_h1: 'Animations estivales · Issoire',
+    festi_p1: "Chaque vendredi soir en juillet-août : concerts, spectacles de rue, marchés nocturnes autour de l'abbatiale illuminée",
+    festi_tag2: '🎸 Jeudis soir · Été', festi_h2: 'La Guinguette Folle Allier · Sauxillanges',
+    festi_p2: 'Concerts en plein air les jeudis soir à Sauxillanges. Brunch, snacks locaux et bonne humeur dans un cadre atypique !',
+    festi_tag3: '🎭 Mardis soir · Été', festi_h3: 'Balades Théâtralisées · Sauxillanges',
+    festi_p3: 'Enquête policière médiévale au cœur du site clunisien. Tout public · 1h30 · Sur réservation. Syndicat d\'initiative : 04 73 96 85 10.',
+    festi_tag4: '🎵 Août · La Chaise-Dieu', festi_h4: 'Festival de la Chaise-Dieu',
+    festi_p4: "L'un des plus grands festivals de musique classique et sacrée de France, dans le cadre exceptionnel de l'abbaye bénédictine du XIVe siècle. 45 min de la maison.",
+    vol_title: 'Volcans &amp; Grands Espaces', vol_sub: 'Les plus beaux panoramas de France à portée de voiture',
+    vol_h1: 'Puy de Dôme', vol_p1: 'Le sommet emblématique (1 465 m), classé UNESCO. Montée à pied ou en Panoramique des Dômes. Vue à 360° sur la chaîne des volcans.',
+    vol_btn1: '→ Panoramique des Dômes',
+    vol_h2: 'Puy de Sancy', vol_p2: 'Point culminant du Massif Central (1 886 m). Téléphérique, randonnées, sources de la Dordogne. Ski en hiver, fraîcheur en été.',
+    vol_h3: 'Vallée de la Chaudefour', vol_p3: 'Réserve naturelle nationale au cœur du Sancy. Paysage volcanique spectaculaire, flore protégée, marmottes, vautours fauves.',
+    vol_h4: 'Lac Pavin · Besse-en-Chandesse', vol_p4: 'Le lac volcanique le plus profond de France, dans un cratère parfait. Baignade, kayak, randonnée autour du lac (2 km).',
+    prat_title: 'Infos Pratiques', prat_sub: "Tout ce qu'il faut savoir avant de partir",
+    prat_h1: 'Commerces à proximité',
+    prat_p1: '<strong>Vernet-la-Varenne (5 min)</strong> : boulangerie, boucher, supérette, bar, pharmacie, médecin.<br><br><strong>Sauxillanges (8 km)</strong> : commerces, supermarché, restaurants.<br><br><strong>Issoire (20 min)</strong> : grande surface, cinéma, hôpital, toutes enseignes.',
+    prat_h2: "Office de Tourisme · Pays d'Issoire", prat_p2: 'Conseils, cartes de randonnées, topoguides, location de vélos et agenda des animations.',
+    prat_agenda: 'Agenda des animations →',
+    prat_h3: 'Accès &amp; Transports',
+    prat_p3: "A75 sortie n°13 (Issoire Nord) · 18 km d'Issoire<br>Gare SNCF Issoire : 20 min<br>Aéroport Clermont-Ferrand : 42 km<br><em style=\"color:var(--vert);font-weight:700\">L'A75 est gratuite dans toute l'Auvergne !</em>",
+    prat_h4: 'VTT &amp; Vélos', prat_p4: 'Parcours VTT balisé sur Vernet-la-Varenne et environs. Cartes au syndicat d\'initiative de Sauxillanges.',
+    prat_detail4: '🚵 Location de VTT à Vernet-la-Varenne',
+    footer_name: 'Havre de paix écorénovée · Hameau de Badarel, Bansat (63420) · Auvergne',
+    footer_guide: "Guide préparé par votre hôte Sidonie · Sources : <a href=\"https://www.issoire-tourisme.com\" target=\"_blank\">issoire-tourisme.com</a> · <a href=\"https://www.parcanimalierdauvergne.fr\" target=\"_blank\">parcanimalierdauvergne.fr</a> · Mis à jour 2026",
+    footer_note: "Votre voisine directe — n'hésitez pas à frapper à ma porte pour tout conseil 🌿",
+  },
+  en: {
+    hero_badge: '🌿 Activity Guide · 2026',
+    hero_title: 'Welcome to the hamlet of <em>Badarel</em><br>in Auvergne',
+    hero_sub: "Your ideal base for families and hikers · Pays d'Issoire · PNR Livradois-Forez · Auvergne Volcanoes",
+    nav_lac: '🏊 Lake', nav_rando: '🥾 Hikes', nav_famille: '👨‍👩‍👧 Families',
+    nav_patrimoine: '🏰 Heritage', nav_marches: '🛒 Markets', nav_tables: '🍽 Restaurants',
+    nav_festi: '🎶 Events', nav_volcans: '🌋 Volcanoes', nav_pratique: 'ℹ️ Practical',
+    lac_title: 'Vernet Lake &amp; Leisure Area', lac_sub: '5 minutes by car from the hamlet of Badarel',
+    lac_dist1: '⭐ Must-see', lac_h1: 'Swimming &amp; Leisure · Vernet-la-Varenne',
+    lac_p1: "The only supervised swimming lake in the Pays d'Issoire. 3 hectares of preserved nature in the heart of the PNR Livradois-Forez. Perfect for the whole family!",
+    lac_detail1: '🏖 Supervised swimming in July–August<br>🚣 Pedalo · Paddle · Stand-up paddle<br>🌲 Tree climbing · Fishing · Playground<br>🎾 Tennis · Pétanque · Volleyball<br>🍔 Bar &amp; food · 🆓 Free access all year',
+    lac_h2: 'Amethyst Museum &amp; Activities',
+    lac_p2: "Discover Europe's main amethyst deposit! Museum tour, crystal hunting on site, stone polishing workshop and jewellery-making to take home as a souvenir.",
+    lac_detail2: '🔮 Museum and deposit tour<br>💎 Stone cutting and polishing workshop<br>🛍 Shop: jewellery, crystals, minerals<br>🎨 Seasonal activities for children',
+    lac_dist3: 'July–August', lac_h3: 'Tree climbing by the lake',
+    lac_p3: 'Treetop adventure course for all ages, right by the lake. Accessible from age 3!',
+    rando_title: 'Hiking ideas', rando_sub: 'Many walks nearby · PNR Livradois-Forez, Sancy, Puy de Dôme…',
+    rando_1_title: 'Ribeyre Loop', rando_1_sub: 'Starting from the house · Woodland, stream, tranquillity', rando_1_warn: '⚠️ Watch out for the elevation gain 😉',
+    rando_2_title: 'Civadoux Valley – Sauxillanges', rando_2_sub: 'Medieval village · Old mill · Views over Sancy and the Puys · Romanesque church',
+    rando_3_title: 'Lospeux Pond – Sauxillanges', rando_3_sub: 'Fishing, picnicking, grey herons · Easy family walk',
+    rando_4_title: 'Valley of the Saints · Boudes', rando_4_sub: 'Vineyards, basalt organ pipes, perched medieval village',
+    rando_5_title: "Puy d'Usson Circuit", rando_5_sub: '360° view over the Lembron · Basalt organ pipes · Village of Queen Margot',
+    rando_6_title: 'Chaudefour Valley · Massif du Sancy', rando_6_sub: 'National nature reserve · Spectacular volcanic landscape · Protected flora',
+    rando_gps: '📱 GPS tracks on <strong>Visorando</strong> and <strong>Komoot</strong> · Maps at the house and at the Issoire Tourist Office',
+    fam_title: 'Family Days Out', fam_sub: 'Activities for all ages',
+    fam_dist1: '⭐ Must-see · 40 min', fam_h1: 'Auvergne Wildlife Park · Ardes-sur-Couze',
+    fam_p1: '350 animals from 65 endangered species across 50 ha. Giraffes, lions, red pandas, snow leopards, lemurs… Entirely dedicated to species at risk.',
+    fam_detail1: '🗓 Open February–December · Including public holidays<br>🎟 Adult: €24.50–28.50 · Child 3-9: €17.50–21.50<br>👶 Under 3 free · 💡 -€3/ticket booked 3 days ahead',
+    fam_btn1: '→ Official website', fam_dist2: '30 min', fam_h2: 'Perrier Caves',
+    fam_p2: 'Free-access former troglodyte village carved into a pozzolana cliff. A one-hour walk through a fascinating setting, perfect for curious children.',
+    fam_detail2: '🆓 Free access · ~1h · Easy · All year',
+    fam_dist3: '20 min · Issoire', fam_h3: 'Aquatic Centre',
+    fam_p3: 'Slides, indoor and outdoor pools, paddling pool. The perfect option on very hot or rainy days!',
+    fam_detail3: '🌧 Great for bad weather · Open all year',
+    fam_dist4: '1h15', fam_h4: 'Vulcania',
+    fam_p4: "Europe's great volcano theme park. Rides, 4D films, spectacular volcano attractions. A must with children.",
+    fam_detail4: '🌋 Booking advised in summer · <a href="https://www.vulcania.com" target="_blank" style="color:var(--vert)" onclick="event.stopPropagation()">vulcania.com</a>',
+    pat_title: 'Heritage &amp; Villages',
+    pat_h1: 'Sauxillanges – Cluniac Site', pat_p1: 'Medieval market town founded in the 10th century around a priory of Cluny Abbey. Summer events and activities.',
+    pat_detail1: '🛒 Tuesday morning market<br>🎶 Guinguette Folle Allier (Thursday evenings in summer)<br>🎭 Theatrical walks Tuesday evenings in summer<br>🏛 Heritage House',
+    pat_btn1: '→ Issoire Tourism',
+    pat_dist2: "12 km · One of France's Most Beautiful Villages", pat_h2: 'Usson – Queen Margot &amp; Basalt Organs',
+    pat_p2: "Perched on its basalt organ pipe hilltop, Usson is one of France's Most Beautiful Villages. Queen Margot was exiled here from 1586 to 1605.",
+    pat_detail2: '🪨 Basalt organ pipes · 🗺 4 km circuit · 2h · Free',
+    pat_dist3: "18 km · One of France's Most Beautiful Villages", pat_h3: 'Montpeyroux',
+    pat_p3: "Stonemasons' village listed as one of France's Most Beautiful Villages. Golden arkose stone houses, 30 m keep, cobbled lanes and local winemakers.",
+    pat_dist4: '15 km', pat_h4: 'Château de Parentignat',
+    pat_p4: 'The "Auvergne Versailles": 18th-century château with formal French gardens open to visit in season. Exceptional furniture collection.',
+    pat_dist5: '20 min', pat_h5: 'Issoire &amp; its Romanesque Abbey',
+    pat_p5: 'One of the finest Romanesque abbeys in Auvergne (11th c.), listed as a historic monument. Shops, cinema. Friday evening entertainment in summer.',
+    pat_detail5: '🎪 Animated Friday evenings in summer · Saturday morning market',
+    pat_dist6: '50 min', pat_h6: 'Saint-Nectaire &amp; its Cheeses',
+    pat_p6: 'Thermal and AOP cheese village. Visit a maturing cellar, taste the real farmhouse Saint-Nectaire. Remarkable 12th-century Romanesque church.',
+    pat_detail6: '🧀 On-site tasting · Pair with a visit to Lac Pavin',
+    pat_dist7: '30 min · Haute-Loire', pat_h7: 'Brioude &amp; the Saint-Julien Basilica',
+    pat_p7: 'The largest Romanesque church in Auvergne (11th–12th c.), listed as a historic monument. Its polychrome capitals are among the finest in Romanesque art.',
+    pat_detail7: '🏛 Free entry · Guided tours in season<br>🐟 Brioude: France\'s salmon fishing capital',
+    pat_dist8: '45 min · Haute-Loire', pat_h8: 'La Chaise-Dieu – Abbey &amp; Festival',
+    pat_p8: "One of France's greatest Benedictine abbeys (14th c.), perched at 1,082 m. Gothic masterpiece with its famous painted \"Danse macabre\" and Flemish tapestries.",
+    pat_detail8: '🎵 Classical and sacred music festival every summer<br>🏔 Village of character · Forests and invigorating air',
+    mar_title: 'Markets &amp; Local Flavours', mar_sub: 'Auvergne produce, short supply chain',
+    mar_day1: 'TUESDAY<br>morning', mar_h1: 'Sauxillanges Market',
+    mar_p1: 'Village market in the heart of the Cluniac town. Local producers: cheeses, vegetables, poultry, honey, crafts. Combine with a stroll through the medieval lanes.',
+    mar_day2: 'SATURDAY<br>morning', mar_h2: 'Issoire Grand Market',
+    mar_p2: "The region's largest market: cheese stalls, charcuterie, Côtes d'Auvergne wines, organic vegetables, flowers. The perfect place to stock up on local produce.",
+    tab_title: 'Some Good Restaurants', tab_sub: 'Tried and appreciated addresses in the region',
+    resto_roseau: 'Market-driven cuisine, local seasonal produce. Warm atmosphere, excellent selection of Auvergne wines.',
+    resto_agastache: 'Creative plant-based cooking showcasing aromatic herbs and local producers.',
+    resto_hobistro: 'Relaxed bistro atmosphere. Generous dishes and a good selection of craft beers.',
+    resto_acerola: 'Refined and creative cuisine, lovely terrace in season. A reliable choice in the heart of Issoire.',
+    resto_marthe: "Old-fashioned country family restaurant. Weekday workers' lunch: simple, generous, delicious. A true taste of Auvergne.",
+    resto_sarpoil: "Renowned gastronomic address in a renovated shepherd's barn. Refined cooking, local produce, exceptional setting. Booking essential.",
+    resto_saintmartin: 'Pleasant restaurant in the heart of the Cluniac site. Carefully prepared regional cuisine, ideal after a walk through the lanes of Sauxillanges.',
+    tab_note: '💡 Book ahead, especially in summer — the best tables fill up fast!',
+    festi_title: 'Summer Events', festi_sub: 'Auvergne summers are full of music, dancing and celebration!',
+    festi_agenda: "Find the full programme at <a href=\"https://www.issoire-tourisme.com/agenda/agenda-des-animations/\" target=\"_blank\" style=\"color:var(--vert);font-weight:700\">issoire-tourisme.com →</a>",
+    festi_tag1: '🎪 Friday evenings · Summer', festi_h1: 'Summer Events · Issoire',
+    festi_p1: 'Every Friday evening in July–August: concerts, street performances and night markets around the illuminated abbey',
+    festi_tag2: '🎸 Thursday evenings · Summer', festi_h2: 'La Guinguette Folle Allier · Sauxillanges',
+    festi_p2: 'Open-air concerts on Thursday evenings in Sauxillanges. Brunch, local snacks and great atmosphere in an unusual setting!',
+    festi_tag3: '🎭 Tuesday evenings · Summer', festi_h3: 'Theatrical Walks · Sauxillanges',
+    festi_p3: 'Medieval detective trail in the heart of the Cluniac site. All ages · 1h30 · Booking required. Tourist office: 04 73 96 85 10.',
+    festi_tag4: '🎵 August · La Chaise-Dieu', festi_h4: 'La Chaise-Dieu Festival',
+    festi_p4: "One of France's greatest classical and sacred music festivals, held in the exceptional setting of the 14th-century Benedictine abbey. 45 min from the house.",
+    vol_title: 'Volcanoes &amp; Wide Open Spaces', vol_sub: "France's most beautiful panoramas within easy reach",
+    vol_h1: 'Puy de Dôme', vol_p1: 'The iconic summit (1,465 m), UNESCO-listed. Walk up or take the Panoramique des Dômes rack railway. 360° view over the volcanic chain.',
+    vol_btn1: '→ Panoramique des Dômes',
+    vol_h2: 'Puy de Sancy', vol_p2: 'Highest point of the Massif Central (1,886 m). Cable car, hikes, source of the Dordogne. Skiing in winter, cool air in summer.',
+    vol_h3: 'Chaudefour Valley', vol_p3: 'National nature reserve in the heart of the Sancy massif. Spectacular volcanic landscape, protected flora, marmots and griffon vultures.',
+    vol_h4: 'Lac Pavin · Besse-en-Chandesse', vol_p4: "France's deepest volcanic lake, set in a perfect crater. Swimming, kayaking, walking around the lake (2 km).",
+    prat_title: 'Practical Information', prat_sub: 'Everything you need to know before you go',
+    prat_h1: 'Nearby shops',
+    prat_p1: '<strong>Vernet-la-Varenne (5 min)</strong>: bakery, butcher, mini-market, bar, pharmacy, doctor.<br><br><strong>Sauxillanges (8 km)</strong>: shops, supermarket, restaurants.<br><br><strong>Issoire (20 min)</strong>: superstore, cinema, hospital, all major brands.',
+    prat_h2: "Tourist Office · Pays d'Issoire", prat_p2: 'Advice, hiking maps, topo-guides, bike hire and events calendar.',
+    prat_agenda: 'Events calendar →',
+    prat_h3: 'Getting here',
+    prat_p3: 'A75 exit 13 (Issoire Nord) · 18 km from Issoire<br>Issoire SNCF train station: 20 min<br>Clermont-Ferrand airport: 42 km<br><em style="color:var(--vert);font-weight:700">The A75 motorway is toll-free throughout Auvergne!</em>',
+    prat_h4: 'Mountain biking &amp; Cycling', prat_p4: 'Signposted MTB trails around Vernet-la-Varenne. Maps available at the Sauxillanges tourist information office.',
+    prat_detail4: '🚵 MTB hire in Vernet-la-Varenne',
+    footer_name: 'Eco-renovated retreat · Hamlet of Badarel, Bansat (63420) · Auvergne',
+    footer_guide: "Guide prepared by your host Sidonie · Sources: <a href=\"https://www.issoire-tourisme.com\" target=\"_blank\">issoire-tourisme.com</a> · <a href=\"https://www.parcanimalierdauvergne.fr\" target=\"_blank\">parcanimalierdauvergne.fr</a> · Updated 2026",
+    footer_note: "Your direct neighbour — don't hesitate to knock on my door for any advice 🌿",
   }
-  function closeLB() {
-    document.getElementById('lb').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', e => { if(e.key==='Escape') closeLB(); });
+};
+
+let currentLang = localStorage.getItem('badarelGuideLang') || 'fr';
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('badarelGuideLang', lang);
+  document.documentElement.lang = lang;
+  document.title = lang === 'fr'
+    ? 'Guide des activités – Hameau de Badarel · Auvergne'
+    : 'Activities Guide – Hamlet of Badarel · Auvergne';
+  document.getElementById('btnFR').classList.toggle('active', lang === 'fr');
+  document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+  const dict = T[lang];
+  document.querySelectorAll('.t[data-key]').forEach(el => {
+    const key = el.dataset.key;
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+}
+
+setLang(currentLang);
+
+function openLB(src, alt) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-img').alt = alt || '';
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() {
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLB(); });
 </script>
 
 </body>
