@@ -75,7 +75,7 @@
   .photo-strip.three img:nth-child(3) { border-radius:0 0 14px 0; }
 
   /* PHOTO POELE */
-  .photo-poele { width:100%; border-radius:14px; display:block; margin:14px 0; cursor:pointer; max-height:400px; object-fit:cover; object-position:center center; transition:opacity .2s; }
+  .photo-poele { width:auto; max-width:100%; max-height:260px; border-radius:14px; display:block; margin:14px auto; cursor:pointer; object-fit:contain; transition:opacity .2s; }
   .photo-poele:hover { opacity:.92; }
 
   /* INFO CARDS */
@@ -243,6 +243,13 @@
     </div>
     <div class="item-list">
       <div class="item">
+        <div class="item-emoji">👁️</div>
+        <div>
+          <div class="item-title t" data-key="access_visual_title">Troubles visuels</div>
+          <div class="item-desc t" data-key="access_visual_desc">Un livret d'accueil en grande police avec pictogrammes est disponible dans la maison (sur la table du salon). Il reprend les informations essentielles de ce livret dans un format lisible.</div>
+        </div>
+      </div>
+      <div class="item">
         <div class="item-emoji">📞</div>
         <div>
           <div class="item-title t" data-key="access_contact_title">Besoin d'informations spécifiques ?</div>
@@ -316,9 +323,9 @@
         <div>
           <div class="item-title t" data-key="maison_rooms_title">Les chambres</div>
           <div class="item-desc t" data-key="maison_rooms_desc">
-            <strong>Chambre 1 :</strong> 2 lits en 90×190 · couettes 140×200<br>
-            <strong>Chambre 2 :</strong> lit 140×190 · couette 240×220<br>
-            <strong>Chambre 3 :</strong> lit 140×190 · couette 240×220<br>
+            <strong>Chambre 1 (droite, étage) :</strong> 2 lits en 90×190 · couettes 140×200<br>
+            <strong>Chambre 2 (droite, étage) :</strong> lit 140×190 · couette 240×220<br>
+            <strong>Chambre 3 (gauche, étage) :</strong> lit 140×190 · couette 240×220<br>
             2 oreillers 60×60 par personne.
           </div>
         </div>
@@ -366,7 +373,7 @@
         <div class="item-emoji">📚</div>
         <div>
           <div class="item-title t" data-key="maison_leisure_title">Pour vous divertir</div>
-          <div class="item-desc t" data-key="maison_leisure_desc">Jeux de société, BD, livres, dépliants sur la région.</div>
+          <div class="item-desc t" data-key="maison_leisure_desc">Jeux de société, BD, livres, dépliants sur la région — tout ça sur le meuble du salon.</div>
         </div>
       </div>
     </div>
@@ -416,8 +423,9 @@
       <div class="item">
         <div class="item-emoji">🍽️</div>
         <div>
-          <div class="item-title t" data-key="equip_dw_title">Lave-vaisselle</div>
-          <div class="item-desc t" data-key="equip_dw_desc">Pour démarrer : appuyez sur <strong>ON</strong>, puis <strong>tournez la molette jusqu'au point blanc</strong>. Pastilles sous l'évier.</div>
+          <div class="item-title t" data-key="equip_dw_title">Lave-vaisselle &amp; Lave-linge</div>
+          <div class="item-desc t" data-key="equip_dw_desc">Pour démarrer le <strong>lave-vaisselle</strong> : appuyez sur <strong>ON</strong>, puis <strong>tournez la molette jusqu'au point blanc</strong>. Pastilles sous l'évier.<br><br>
+          Les deux sont plutôt bruyants — je vous déconseille de les faire tourner la nuit. Idéalement, les heures creuses sont <strong>entre 12h et 19h</strong>.</div>
         </div>
       </div>
 
@@ -432,7 +440,7 @@
           • <strong>TF1+</strong> → chaînes TF1, TMC, TFX…<br>
           • <strong>6play</strong> → M6, W9, 6ter…<br>
           • <strong>Molotov TV</strong> → toutes les autres chaînes<br>
-          • <strong>Netflix</strong> → utilisez les profils <em>Invité</em> et <em>Jeunesse</em></div>
+          • <strong>Netflix</strong> → utilisez <strong>uniquement</strong> les profils <em>Invité</em> et <em>Jeunesse</em></div>
         </div>
       </div>
 
@@ -492,7 +500,7 @@
         <div class="item-emoji">🌱</div>
         <div>
           <div class="item-title t" data-key="eco_compost_title">Compost</div>
-          <div class="item-desc t" data-key="eco_compost_desc">Le compost se trouve <strong>derrière la maison, côté nord</strong> — quand vous sortez par la porte de la cuisine, tournez à droite. Épluchures, restes de fruits et légumes, marc de café, tout y est bienvenu !</div>
+          <div class="item-desc t" data-key="eco_compost_desc">Un composteur se trouve <strong>derrière la maison, côté nord</strong> — quand vous sortez par la porte de la cuisine, tournez à droite. Épluchures, restes de fruits et légumes, marc de café, tout y est bienvenu !</div>
         </div>
       </div>
 
@@ -686,10 +694,10 @@
       equip_poele_alert: '<strong>IMPORTANT :</strong> Ne laissez pas le cendrier ouvert sans surveillance, ni en dehors du moment du démarrage.<br><strong>ATTENTION :</strong> Ne brûlez pas de déchets ou de bois traité.',
       equip_pac_title: 'PAC réversible — chauffage & climatisation',
       equip_pac_desc: 'La télécommande est posée sur le meuble du salon. Elle contrôle la pompe à chaleur au RDC. Généralement le poêle à bois est suffisant pour chauffer efficacement tout le rez-de-chaussée. Des radiateurs électriques sont disponibles à l\'étage — leurs thermostats sont directement sur les appareils.<br><br>🌍 <em>Merci de faire un usage raisonné du chauffage et de la climatisation. Un petit geste pour la planète !</em>',
-      equip_dw_title: 'Lave-vaisselle',
-      equip_dw_desc: 'Pour démarrer : appuyez sur <strong>ON</strong>, puis <strong>tournez la molette jusqu\'au point blanc</strong>. Pastilles sous l\'évier.',
+      equip_dw_title: 'Lave-vaisselle & Lave-linge',
+      equip_dw_desc: 'Pour démarrer le <strong>lave-vaisselle</strong> : appuyez sur <strong>ON</strong>, puis <strong>tournez la molette jusqu\'au point blanc</strong>. Pastilles sous l\'évier.<br><br>Les deux sont plutôt bruyants — je vous déconseille de les faire tourner la nuit. Idéalement, les heures creuses sont <strong>entre 12h et 19h</strong>.',
       equip_tv_title: 'Télévision',
-      equip_tv_desc: 'La TV est une <strong>TV connectée</strong> — il n\'y a pas d\'antenne.<br><br>🎮 <strong>Grande télécommande :</strong> uniquement pour allumer et éteindre la TV.<br>🕹️ <strong>Petite télécommande :</strong> pour naviguer dans les menus.<br><br>📱 <strong>Applications disponibles :</strong><br>• <strong>TF1+</strong> → chaînes TF1, TMC, TFX…<br>• <strong>6play</strong> → M6, W9, 6ter…<br>• <strong>Molotov TV</strong> → toutes les autres chaînes<br>• <strong>Netflix</strong> → utilisez les profils <em>Invité</em> et <em>Jeunesse</em>',
+      equip_tv_desc: 'La TV est une <strong>TV connectée</strong> — il n\'y a pas d\'antenne.<br><br>🎮 <strong>Grande télécommande :</strong> uniquement pour allumer et éteindre la TV.<br>🕹️ <strong>Petite télécommande :</strong> pour naviguer dans les menus.<br><br>📱 <strong>Applications disponibles :</strong><br>• <strong>TF1+</strong> → chaînes TF1, TMC, TFX…<br>• <strong>6play</strong> → M6, W9, 6ter…<br>• <strong>Molotov TV</strong> → toutes les autres chaînes<br>• <strong>Netflix</strong> → utilisez <strong>uniquement</strong> les profils <em>Invité</em> et <em>Jeunesse</em>',
       equip_plancha_title: 'Plancha & appareil à mini-crêpes',
       equip_plancha_desc: 'La <strong>plancha</strong> et l\'<strong>appareil à mini-crêpes</strong> se trouvent dans le placard du salon. À votre disposition, n\'hésitez pas !',
       equip_cleaning_title: 'Matériel & produits ménagers',
@@ -701,7 +709,7 @@
       eco_sorting_title: 'Tri sélectif',
       eco_sorting_desc: 'À la sortie du hameau à gauche (ou à l\'entrée à droite), vous trouverez <strong>3 poubelles</strong> :<br>• Une pour le <strong>tout-venant</strong><br>• Une pour les <strong>conserves, papiers, cartons, emballages</strong><br>• Un <strong>composteur</strong><br><br>Pour le <strong>verre</strong>, des containers sont accessibles en voiture au Vernet-la-Varenne (au plan d\'eau), à Sarpoil, à La Malotière…',
       eco_compost_title: 'Compost',
-      eco_compost_desc: 'Le compost se trouve <strong>derrière la maison, côté nord</strong> — quand vous sortez par la porte de la cuisine, tournez à droite. Épluchures, restes de fruits et légumes, marc de café, tout y est bienvenu !',
+      eco_compost_desc: 'Un composteur se trouve <strong>derrière la maison, côté nord</strong> — quand vous sortez par la porte de la cuisine, tournez à droite. Épluchures, restes de fruits et légumes, marc de café, tout y est bienvenu !',
       eco_energy_title: 'Économies d\'énergie',
       eco_energy_desc: 'Pensez à éteindre les lumières en quittant une pièce, à ne pas laisser les fenêtres ouvertes avec le chauffage allumé, et à éteindre la PAC en cas d\'absence prolongée. Merci pour la planète ! 🌍',
       depart_title: 'Départ',
@@ -794,10 +802,10 @@
       equip_poele_alert: '<strong>IMPORTANT:</strong> Do not leave the ash drawer open unsupervised, or outside of the starting period.<br><strong>WARNING:</strong> Do not burn waste or treated wood.',
       equip_pac_title: 'Reversible heat pump — heating & air conditioning',
       equip_pac_desc: 'The remote control is on the living room sideboard. It controls the heat pump on the ground floor. The wood-burning stove is usually sufficient to heat the entire ground floor efficiently. Electric radiators are available upstairs — their thermostats are directly on the units.<br><br>🌍 <em>Please use heating and air conditioning responsibly. A small gesture for the planet!</em>',
-      equip_dw_title: 'Dishwasher',
-      equip_dw_desc: 'To start: press <strong>ON</strong>, then <strong>turn the dial to the white dot</strong>. Tablets are under the sink.',
+      equip_dw_title: 'Dishwasher & Washing machine',
+      equip_dw_desc: 'To start the <strong>dishwasher</strong>: press <strong>ON</strong>, then <strong>turn the dial to the white dot</strong>. Tablets are under the sink.<br><br>Both are quite noisy — we recommend not running them at night. Ideally, use them <strong>between 12pm and 7pm</strong>.',
       equip_tv_title: 'Television',
-      equip_tv_desc: 'The TV is a <strong>smart TV</strong> — there is no aerial.<br><br>🎮 <strong>Large remote:</strong> only for turning the TV on and off.<br>🕹️ <strong>Small remote:</strong> for navigating the menus.<br><br>📱 <strong>Available apps:</strong><br>• <strong>TF1+</strong> → TF1, TMC, TFX channels…<br>• <strong>6play</strong> → M6, W9, 6ter channels…<br>• <strong>Molotov TV</strong> → all other French channels<br>• <strong>Netflix</strong> → use the <em>Guest</em> and <em>Kids</em> profiles',
+      equip_tv_desc: 'The TV is a <strong>smart TV</strong> — there is no aerial.<br><br>🎮 <strong>Large remote:</strong> only for turning the TV on and off.<br>🕹️ <strong>Small remote:</strong> for navigating the menus.<br><br>📱 <strong>Available apps:</strong><br>• <strong>TF1+</strong> → TF1, TMC, TFX channels…<br>• <strong>6play</strong> → M6, W9, 6ter channels…<br>• <strong>Molotov TV</strong> → all other French channels<br>• <strong>Netflix</strong> → use <strong>only</strong> the <em>Guest</em> and <em>Kids</em> profiles',
       equip_plancha_title: 'Plancha grill & mini-crêpe maker',
       equip_plancha_desc: 'The <strong>plancha</strong> and the <strong>mini-crêpe maker</strong> are in the living room cupboard. Help yourself!',
       equip_cleaning_title: 'Cleaning equipment & products',
@@ -809,7 +817,7 @@
       eco_sorting_title: 'Recycling',
       eco_sorting_desc: 'At the exit of the hamlet on the left (or the entrance on the right), you\'ll find <strong>3 bins</strong>:<br>• One for <strong>general waste</strong><br>• One for <strong>tins, paper, cardboard, packaging</strong><br>• A <strong>compost bin</strong><br><br>For <strong>glass</strong>, containers are accessible by car at Vernet-la-Varenne (at the lake), Sarpoil, and La Malotière…',
       eco_compost_title: 'Compost',
-      eco_compost_desc: 'The compost bin is <strong>behind the house, on the north side</strong> — when you go out through the kitchen door, turn right. Vegetable peelings, fruit scraps, coffee grounds — all welcome!',
+      eco_compost_desc: 'A compost bin can be found <strong>behind the house, on the north side</strong> — when you go out through the kitchen door, turn right. Vegetable peelings, fruit scraps, coffee grounds — all welcome!',
       eco_energy_title: 'Energy saving',
       eco_energy_desc: 'Remember to turn off the lights when leaving a room, avoid leaving windows open with the heating on, and switch off the heat pump if you\'re away for a long period. Thank you for the planet! 🌍',
       depart_title: 'Departure',
